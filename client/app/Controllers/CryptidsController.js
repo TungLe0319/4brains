@@ -66,4 +66,15 @@ export class CryptidsController {
       Pop.error(error)
     }
   }
+
+
+  async activeCryptid(id) {
+
+    try {
+      await cryptidsService.activeCryptid(id)
+    } catch (error) {
+      console.error('[]', error)
+      Pop.error(error)
+    }
+  }
 }

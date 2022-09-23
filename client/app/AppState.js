@@ -10,10 +10,13 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
   values = []
   socketData = []
-  
+
   // ----------------------------------------//
   /** @type {import('./Models/Cryptid').Cryptid[]} */
-cryptids = []
+  cryptids = []
+
+  /** @type {import('./Models/ActiveCryptid').ActiveCryptid | null} */
+  activeCryptid = null
 }
 
 export const appState = new Proxy(new AppState(), {
