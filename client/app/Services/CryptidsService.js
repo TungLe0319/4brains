@@ -6,7 +6,7 @@ class CryptidsService {
 
 
   async likePost(cryptidId) {
-    const res = await server.post(`/api/likes`, { cryptidId })
+    const res = await server.post(`/api/likes/like`, { cryptidId })
     console.log(res.data);
   }
 

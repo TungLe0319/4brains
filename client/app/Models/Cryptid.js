@@ -3,13 +3,13 @@ export class Cryptid {
 
   constructor(data) {
     this.id = data.id
-this.name = data.name
-this.imgUrl = data.imgUrl
-this.location = data.location
-this.description = data.description
-this.likes = data.likes || 0
-this.dislikes = data.dislikes || 0
-this.popularity = (data.likes - data.dislikes)
+    this.name = data.name
+    this.imgUrl = data.imgUrl
+    this.location = data.location
+    this.description = data.description
+    this.likes = data.likes || 0
+    this.dislikes = data.dislikes || 0
+    this.popularity = (data.likes - data.dislikes)
   }
 
   get CryptidTemplate() {
@@ -27,7 +27,7 @@ this.popularity = (data.likes - data.dislikes)
                   <span> <i class="mdi mdi-comment fs-2 selectable"  data-bs-toggle="modal"
               data-bs-target="#postModal" onclick=""></i><small>6</small></span>
                   <span class="mx-3">
-                    <i class="mdi mdi-arrow-up-box text-success fs-4 selectable" onclick="app.cryptidsController.likePost('${this.id}')"></i><small></small></span
+                    <i class="mdi mdi-arrow-up-box text-success fs-4 selectable" onclick="app.cryptidsController.likePost('${this.id}')"></i><small>${this.likes}</small></span
                   >
                   <span>
                     <i class="mdi mdi-arrow-down-box text-danger fs-4 selectable"></i
@@ -48,7 +48,7 @@ this.popularity = (data.likes - data.dislikes)
             </div>
 
    
-    `;
+    `
   }
 
 
