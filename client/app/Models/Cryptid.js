@@ -46,5 +46,9 @@ this.description = data.description
     `;
   }
 
+  getPostDetailsTemplate(){
+    
+  }
+
   
 }
