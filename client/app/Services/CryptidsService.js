@@ -9,7 +9,8 @@ class CryptidsService {
 
     const res = await server.get(`api/cryptids/${id}`)
     console.log(res.data);
-    // appState.activeCryptid = new ActiveCryptid(res.data)
+    appState.activeCryptids = new ActiveCryptid(res.data)
+    console.log(appState.activeCryptids);
   }
 
 
