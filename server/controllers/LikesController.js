@@ -3,15 +3,30 @@ import { cryptidsService } from "../services/CryptidsService.js";
 import BaseController from "../utils/BaseController.js";
 import { BadRequest } from "../utils/Errors.js";
 
-export class LikesController extends BaseController{
+export class LikesController extends BaseController {
 
-  constructor(){
+  constructor() {
     super('api/likes')
     this.router
-    .use(Auth0Provider.getAuthorizedUserInfo)
-    .post('', this.like)
-    .get('', this.getLikes)
+      .use(Auth0Provider.getAuthorizedUserInfo)
+      .post('/like', this.like)
+      .post('/dislike', this.dislike)
+      .get('', this.getLikes)
   }
+  async dislike(req, res, next) {
+    try {
+      const formData = {
+        cryptidId: req.body.cryptidId,
+        fieldAgentId: req.userInfo.id,
+        value: -1
+      }
+      const dislike = await cryptidsService.dislike(formData)
+      // res.send(dislike) ???
+    } catch (error) {
+      next(error)
+    }
+  }
+
   async like(req, res, next) {
     try {
       const formData = {
@@ -24,15 +39,15 @@ export class LikesController extends BaseController{
       next(error)
     }
   }
-  async getLikes(req, res, next){
-try {
-  if(!req.query.cryptidId){
-    throw new BadRequest('Error!')
-  }
-  const likes = await cryptidsService.getLikes(req.query)
-  res.send(likes)
-} catch (error) {
-  next(error)
-}
+  async getLikes(req, res, next) {
+    try {
+      if (!req.query.cryptidId) {
+        throw new BadRequest('Error!')
+      }
+      const likes = await cryptidsService.getLikes(req.query)
+      res.send(likes)
+    } catch (error) {
+      next(error)
+    }
   }
 }
