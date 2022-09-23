@@ -3,11 +3,11 @@ export class Cryptid {
 
   constructor(data) {
     this.id = data.id
-this.name = data.name
-this.imgUrl = data.imgUrl
-this.location = data.location
-this.description = data.description
-this.likers = data.likes || 0
+    this.name = data.name
+    this.imgUrl = data.imgUrl
+    this.location = data.location
+    this.description = data.description
+    this.likers = data.likes || 0
 
   }
 
@@ -26,7 +26,7 @@ this.likers = data.likes || 0
                   <span> <i class="mdi mdi-comment fs-2 selectable"  data-bs-toggle="modal"
               data-bs-target="#postModal" onclick=""></i><small>6</small></span>
                   <span class="mx-3">
-                    <i class="mdi mdi-arrow-up-box text-success fs-4 selectable"></i><small>14</small></span
+                    <i class="mdi mdi-arrow-up-box text-success fs-4 selectable"></i><small>${this.likers}</small></span
                   >
                   <span>
                     <i class="mdi mdi-arrow-down-box text-danger fs-4 selectable"></i
@@ -40,12 +40,15 @@ this.likers = data.likes || 0
                   <p>${this.location}</p>
                   <small>${this.description}</small>
                 </div>
-              </div>
+                </div>
+                <div>
+                <i class="mdi mdi-cancel text-danger selectable" onclick = "app.cryptidsController.removeCryptid('${this.id}')"></i>
+                </div>
             </div>
 
    
     `;
   }
 
-  
+
 }
