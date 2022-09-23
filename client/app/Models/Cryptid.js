@@ -24,16 +24,19 @@ export class Cryptid {
                 />
               </div>
               <div class="card-body">
-                <div class="border-bottom border-dark border-1">
+                <div class="border-bottom d-flex justify-content-between border-dark border-1">
                   <span> <i class="mdi mdi-comment fs-2 selectable"  data-bs-toggle="modal"
               data-bs-target="#postModal" onclick="app.cryptidsController.activeCryptid('${this.id}')"></i><small>6</small></span>
                   <span class="mx-3">
-                    <i class="mdi mdi-arrow-up-box text-success fs-4 selectable" onclick="app.cryptidsController.likePost('${this.id}')"></i><small>${this.likes}</small></span
-                  >
-                  <span>
-                    <i class="mdi mdi-arrow-down-box text-danger fs-4 selectable"></i
-                    ><small>5</small></span
-                  >
+                    <i class="mdi mdi-arrow-up-box text-success fs-4 selectable" onclick="app.cryptidsController.likePost('${this.id}')"></i></span>
+                    <div class ="bg-dark text-danger text-center 
+                    w-25 border border-light rounded opacity-75 fs-1" id="likes">
+                    </div>
+                  
+
+                  
+                    <span>
+                    <i class="mdi mdi-arrow-down-box text-danger fs-4 selectable" onclick="app.cryptidsController.dislikePost('${this.id}')"></i></span>
                 </div>
                 <div class="text-shadow mt-2">
                 <div>
