@@ -39,7 +39,7 @@ export class ActiveCryptid {
                 <div class="d-flex justify-content-center">
                   <div class="card commentbg mb-5 mt-2 mx-2 p-4  scrollable-y">
 
-
+    
 
                     <div class="border border-dark d-flex mb-3 rotated cardcomment">
                       <span class="ms-2"><i class="mdi mdi-human fs-3"></i></span>

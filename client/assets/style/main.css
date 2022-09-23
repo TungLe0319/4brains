@@ -13776,13 +13776,7 @@ main {
 }
 
 .headerbg {
-  height: 20vh;
-  /* always scale the image to the appropriate size of your screen */
-  background-size: contain;
-  background-image: url(https://wallpapercave.com/wp/wp3396934.jpg);
-  background-position: center;
-  /* keeps the image fixed while scrolling , neat effect. */
-  background-attachment: fixed;
+  background-color: rgba(40, 28, 28, 0.589);
 }
 
 .sticky-btn {
@@ -13804,6 +13798,11 @@ main {
 
 .scrollme {
   max-height: 80vh;
+  overflow: auto;
+}
+
+.description {
+  max-height: 10vh;
   overflow: auto;
 }
 
