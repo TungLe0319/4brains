@@ -20,7 +20,7 @@
       <div>
 <a class="navbar-brand" href="#">
        
-        <span class="ml-2">4brains</span>
+        <span class="ml-2 ms-2">4brains</span>
       </a>
 
       </div>
@@ -42,8 +42,8 @@
   </header>
   <main id="app">
     <div class="container-fluid">
-      <div class="row my-3">
-       <div class="card postCard elevation-3 mx-4 my-2" style="width: 17.5rem">
+      <div class="row my-3 scrollme" id="posts">
+       <!-- <div class="card postCard elevation-3 mx-4 my-2" style="width: 17.5rem">
               <div class="d-flex justify-content-center">
                 <img
                   src="https://d2ph5fj80uercy.cloudfront.net/04/cat3676.jpg"
@@ -67,14 +67,13 @@
                   <h6>PlaceHolder Text</h6>
                 </div>
               </div>
-            </div>
-
-
+            </div> -->
 
       </div>
+      <!-- ------NEW ROW------ -->
         <div class="row mt-5">
           <div class="col-md-2">
-            <!-- Button trigger modal -->
+           
             <button
               type="button"
               class="btn bg-primary text-light rounded-circle sticky-btn"
@@ -83,7 +82,7 @@
             >
               <i class="mdi mdi-foot-print fs-1"></i>
             </button>
-            <!-- --------- -->
+          
            
             <!-- --- -->
           </div>
@@ -93,11 +92,11 @@
 
   </main>
   <footer class="container-fluid bg-dark text-light">
-    <div class="row text-center">
+    <!-- <div class="row text-center">
       <div class="col">
         <p><small>Made with 💖 by CodeWorks</small></p>
       </div>
-    </div>
+    </div> -->
   </footer>
 
 <!-- ---------------------- -->
@@ -193,7 +192,7 @@
   <input type="text" class="form-control" id="name" id="name" placeholder="name">
   <label for="name">Name</label>
 </div>
-<div class="form-floating">
+<div class="form-floating mb-3">
   <input type="text" class="form-control" id="location" name="location" placeholder="location">
   <label for="location">Location</label>
 </div>
