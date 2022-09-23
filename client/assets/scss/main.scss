@@ -1,19 +1,81 @@
-@import "./_variables.scss";
-@import "../../../node_modules/bootstrap/scss/bootstrap";
-@import "./_overrides.scss";
-@import "./custom.scss";
-@import "./loaders.scss";
+@import './_variables.scss';
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import './_overrides.scss';
+@import './custom.scss';
+@import './loaders.scss';
+@import url('http://fonts.cdnfonts.com/css/modern-typewriter');
+
+* {
+  font-family: 'MODERN TYPEWRITER', sans-serif;
+}
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: $body-bg;
+  // background-color: $body-bg;
+  background-image: url(https://images4.alphacoders.com/858/858507.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 main {
   flex-grow: 1;
 }
 
+.polaroid {
+  filter: sepia(80%);
+}
 
+.polaroid:hover {
+  filter: sepia(0%);
+  transition: all 0.3s ease-in-out;
+}
 
+.cardcomment:hover {
+  transform: scale(1.02);
+  transition: all 0.3s ease-out;
+}
+
+.postCard:hover{
+    transform: scale(1.02);
+  transition: all 0.3s ease-out;
+}
+
+.verybigmodal {
+  max-width: 90%;
+}
+
+.scrollable-y {
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.headerbg {
+  height: 20vh1;
+
+  /* always scale the image to the appropriate size of your screen */
+  background-size: contain;
+  background-image: url(https://wallpapercave.com/wp/wp3396934.jpg);
+  background-position: center;
+  /* keeps the image fixed while scrolling , neat effect. */
+  background-attachment: fixed;
+}
+
+.sticky-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 15px;
+}
+
+.rotated{
+  transform: rotate(3deg);
+
+}
+
+.commentbg{
+  background-image: url(https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimg.freepik.com%2Fpremium-photo%2Fnatural-recycled-paper-texture-background_118047-8916.jpg%3Fw%3D2000);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}

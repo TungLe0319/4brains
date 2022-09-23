@@ -1,9 +1,11 @@
 import { AuthController } from './Controllers/AuthController.js';
-import { ValuesController } from './Controllers/ValuesController.js';
+import { CryptidsController } from "./Controllers/CryptidsController.js";
+
 
 class App {
   authController = new AuthController();
-  valuesController = new ValuesController();
+ 
+  cryptidsController = new CryptidsController
 }
 
 // @ts-ignore
