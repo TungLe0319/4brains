@@ -183,13 +183,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-       <form onsubmit="">
+       <form onsubmit="app.cryptidsController.addCryptid()">
         <div class="form-floating mb-3">
   <input type="url" class="form-control" id="imgUrl" name="imgUrl"  placeholder="ImgUrl">
   <label for="imgUrl">ImgUrl</label>
 </div>
 <div class="form-floating mb-3">
-  <input type="text" class="form-control" id="name" id="name" placeholder="name" required>
+  <input type="text" class="form-control" id="name" name="name" placeholder="name" required>
   <label for="name">Name</label>
 </div>
 <div class="form-floating mb-3">
@@ -200,11 +200,11 @@
   <input type="text" class="form-control" id="description" name="description" placeholder="description" required>
   <label for="description">Description</label>
 </div>
+<div class="modal-footer">
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</div>
        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

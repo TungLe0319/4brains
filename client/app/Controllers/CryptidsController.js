@@ -1,4 +1,4 @@
-import bootstrap from 'bootstrap';
+
 import { appState } from '../AppState.js';
 import { cryptidsService } from '../Services/CryptidsService.js';
 import { getFormData } from '../Utils/FormHandler.js';
@@ -27,7 +27,7 @@ export class CryptidsController {
     }
   }
 
-  async addPost() {
+  async addCryptid() {
     try {
       // @ts-ignore
       window.event.preventDefault();
@@ -35,13 +35,14 @@ export class CryptidsController {
       // @ts-ignores
       const form = window.event.target;
       const formData = getFormData(form);
-      await cryptidsService.addPost(formData);
+      await cryptidsService.addCryptid(formData);
       // @ts-ignore
       form.reset();
+      // @ts-ignore
       const postModal = bootstrap.Modal.getOrCreateInstance('#postFormModal');
       postModal.hide();
     } catch (error) {
-      console.error('[]', error);
+      console.error('[addCryptid]', error);
       Pop.error(error);
     }
   }
