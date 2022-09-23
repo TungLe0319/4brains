@@ -10,20 +10,24 @@ export class CryptidsController extends BaseController {
     .get('', this.getCryptids)
     .use(Auth0Provider.getAuthorizedUserInfo)
     .post('', this.addCryptid)
-    .get('/:id', this.getCryptidbyId)
+    .delete('/:id', this.deleteCryptid)
+    
+    
   }
-  async getCryptidbyId(req, res, next) {
+  async deleteCryptid(req, res, next) {
     try {
-      
+      const cryptid = await cryptidsService.deleteCryptid(req.params.id, req.userInfo)
+      res.send(cryptid)
     } catch (error) {
       next(error)
     }
   }
 
+
     async addCryptid(req, res, next){
       try {
         req.body.agentId = req.userInfo.id
-        const cryptid = await cryptidsService.addCryptid(req.body)
+        const cryptid = await (await cryptidsService.addCryptid(req.body)).populate('agent', 'name picture')
         res.send(cryptid)
       } catch (error) {
         next(error)
