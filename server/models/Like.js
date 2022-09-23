@@ -4,6 +4,7 @@ export const LikeSchema = new Schema({
 
   fieldAgentId: { type: ObjectId, required: true, ref: 'Account' },
   cryptidId: { type: ObjectId, required: true, ref: 'Cryptid' },
+
 }, {
   timestamps: true, toJSON: { virtuals: true }
 })
