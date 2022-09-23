@@ -23,7 +23,7 @@ this.description = data.description
               <div class="card-body">
                 <div class="border-bottom border-dark border-1">
                   <span> <i class="mdi mdi-comment fs-2 selectable"  data-bs-toggle="modal"
-              data-bs-target="#postModal" onclick="app."></i><small>6</small></span>
+              data-bs-target="#postModal" onclick=""></i><small>6</small></span>
                   <span class="mx-3">
                     <i class="mdi mdi-arrow-up-box text-success fs-4 selectable"></i><small>14</small></span
                   >
