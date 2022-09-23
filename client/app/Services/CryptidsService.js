@@ -5,8 +5,9 @@ import { server } from "./AxiosService.js"
 class CryptidsService {
 
 
-  async likePost(cryptidId) {
-    const res = await server.post(`/api/likes/like`, { cryptidId })
+  async likePost(id)
+  {
+    const res = await server.post(`/api/likes/like`, { id })
     console.log(res.data);
   }
 
