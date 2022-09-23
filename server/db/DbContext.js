@@ -11,6 +11,7 @@ class DbContext {
   Cryptids = mongoose.model('Cryptid', CryptidSchema)
 
   Likes = mongoose.model('Like', LikeSchema)
+  
 }
 
 export const dbContext = new DbContext()
