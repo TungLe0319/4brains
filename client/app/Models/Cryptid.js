@@ -25,7 +25,7 @@ export class Cryptid {
               <div class="card-body">
                 <div class="border-bottom border-dark border-1">
                   <span> <i class="mdi mdi-comment fs-2 selectable"  data-bs-toggle="modal"
-              data-bs-target="#postModal" onclick=""></i><small>6</small></span>
+              data-bs-target="#postModal" onclick="app.cryptidsController.activeCryptid('${this.id}')"></i><small>6</small></span>
                   <span class="mx-3">
                     <i class="mdi mdi-arrow-up-box text-success fs-4 selectable" onclick="app.cryptidsController.likePost('${this.id}')"></i><small>${this.likes}</small></span
                   >
@@ -50,5 +50,8 @@ export class Cryptid {
    
     `
   }
+
+
+
 
 }
