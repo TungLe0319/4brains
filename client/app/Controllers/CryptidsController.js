@@ -56,4 +56,14 @@ export class CryptidsController {
       Pop.error(error)
     }
   }
+
+
+  async likePost(userInfo) {
+    try {
+      await cryptidsService.likePost(userInfo)
+    } catch (error) {
+      console.error('[likePost]', error)
+      Pop.error(error)
+    }
+  }
 }

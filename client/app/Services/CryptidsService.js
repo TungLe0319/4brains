@@ -3,6 +3,14 @@ import { Cryptid } from "../Models/Cryptid.js";
 import { server } from "./AxiosService.js"
 
 class CryptidsService {
+
+
+  async likePost(userInfo) {
+    const res = await server.post(`/api/cryptids`, { userInfo })
+    console.log(res.data);
+  }
+
+
   async removeCryptid(id) {
     await server.delete(`api/cryptids/${id}`)
     appState.cryptids = appState.cryptids.filter(c => c.id != id)
