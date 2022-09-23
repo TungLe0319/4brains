@@ -8,12 +8,20 @@ export class CryptidsController extends BaseController {
     super('api/cryptids')
     this.router
     .get('', this.getCryptids)
+    .get('/:id', this.getCryptidById)
     .use(Auth0Provider.getAuthorizedUserInfo)
     .post('', this.addCryptid)
     .delete('/:id', this.deleteCryptid)
-    
-    
   }
+   async getCryptidById(req, res, next){
+try {
+  const cryptid = await cryptidsService.getCryptidById(req.body)
+  res.send(cryptid)
+} catch (error) {
+  next(error)
+}
+   } 
+    
   async deleteCryptid(req, res, next) {
     try {
       const cryptid = await cryptidsService.deleteCryptid(req.params.id, req.userInfo)
