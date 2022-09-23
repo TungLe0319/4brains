@@ -26,10 +26,10 @@ CryptidSchema.virtual('likes', {
   ref: 'Like'
 })
 
-// CryptidSchema.virtual('dislikes', {
-//   localField: '_id',
-//   foreignField: 'cryptId',
-//   count: true,
-//   ref: 'Like'
-// })
+CryptidSchema.virtual('dislikes', {
+  localField: '_id',
+  foreignField: 'cryptidId',
+  count: true,
+  ref: 'Dislike'
+})
 

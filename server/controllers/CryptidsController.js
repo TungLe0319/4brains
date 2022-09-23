@@ -15,7 +15,7 @@ export class CryptidsController extends BaseController {
   }
    async getCryptidById(req, res, next){
 try {
-  const cryptid = await cryptidsService.getCryptidById(req.body)
+  const cryptid = await (await cryptidsService.getCryptidById(req.params.id)).populate('agent', 'name picture')
   res.send(cryptid)
 } catch (error) {
   next(error)
