@@ -1,22 +1,33 @@
 
 import { appState } from '../AppState.js';
+import { Cryptid } from '../Models/Cryptid.js';
 import { cryptidsService } from '../Services/CryptidsService.js';
 import { getFormData } from '../Utils/FormHandler.js';
 import { Pop } from '../Utils/Pop.js';
-import { setHTML } from '../Utils/Writer.js';
+import { setHTML, setText } from '../Utils/Writer.js';
 
 function drawCryptids() {
   let template = '';
 
   appState.cryptids.forEach((c) => (template += c.CryptidTemplate));
   setHTML('posts', template);
+  ;
 }
+function drawLikes(){
+  
+  let likes = appState.cryptids.forEach(c => c.likes)
+  setText('likes', likes)
+  
+}
+  
 
 export class CryptidsController {
   constructor() {
     this.getCryptids();
     appState.on('cryptids', drawCryptids);
+    appState.on('cryptids', drawLikes)
   }
+
 
   async getCryptids() {
     try {
@@ -63,7 +74,7 @@ export class CryptidsController {
       await cryptidsService.likePost(id)
     } catch (error) {
       console.error('[likePost]', error)
-      Pop.error(error)
+      Pop.error("You've already liked this")
     }
   }
 

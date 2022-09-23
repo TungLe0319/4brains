@@ -2,7 +2,7 @@ import { dbContext } from "../db/DbContext.js"
 import { BadRequest, Forbidden } from "../utils/Errors.js"
 
 class CryptidsService {
-  async dislike(query = {}) {
+  async getDislike(query = {}) {
     const dislikes = await dbContext.Dislikes.find(query).populate('cryptid')
     return dislikes
   }
@@ -11,6 +11,11 @@ class CryptidsService {
     return likes
   }
 
+  async dislike(formData){
+    const cryptid = await this.getCryptidById(formData.cryptidId)
+    const dislike = await dbContext.Dislikes.create(formData)
+    await dislike.populate('cryptid')
+  }
 
   async like(formData) {
     const cryptid = await this.getCryptidById(formData.cryptidId)
