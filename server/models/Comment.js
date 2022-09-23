@@ -4,16 +4,16 @@ const ObjectId = Schema.Types.ObjectId;
 
 export const CommentSchema = new Schema(
   {
-    comment: {
+    body: {
       type: String,
       default: '',
-      minLength: 3,
-      maxLength: 100,
+
+
     },
 
     //USER INFO
     //RELATIONSHIPS-------------------------------------V magic string here
-    exampleId: { type: ObjectId, required: true, ref: 'Account' },
+    agentId: { type: ObjectId, required: true, ref: 'Account' },
   },
   {
     timestamps: true,
@@ -23,8 +23,8 @@ export const CommentSchema = new Schema(
   }
 );
 
-CommentSchema.virtual('example', {
-  localField: 'exampleId',
+CommentSchema.virtual('comment', {
+  localField: 'creatorId',
   foreignField: '_id',
   justOne: true,
   ref: 'Account',

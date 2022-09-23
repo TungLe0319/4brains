@@ -33,3 +33,9 @@ CryptidSchema.virtual('dislikes', {
   ref: 'Dislike'
 })
 
+CryptidSchema.virtual('comments', {
+  localField: '_id',
+  foreignField: 'cryptidId',
+
+  ref: 'Comment'
+})
