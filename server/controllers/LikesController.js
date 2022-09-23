@@ -9,14 +9,14 @@ export class LikesController extends BaseController {
     super('api/likes')
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
-      .post('/like', this.like)
+      .post('/like/', this.like)
       .post('/dislike', this.dislike)
-      .get('', this.getLikes)
+      .get('/like/', this.getLikes)
   }
   async dislike(req, res, next) {
     try {
       const formData = {
-        cryptidId: req.body.cryptidId,
+        cryptidId: req.body.id,
         fieldAgentId: req.userInfo.id,
       }
       const dislike = await cryptidsService.dislike(formData)
@@ -29,10 +29,11 @@ export class LikesController extends BaseController {
   async like(req, res, next) {
     try {
       const formData = {
-        cryptidId: req.body.cryptidId,
+        cryptidId: req.body.id,
         fieldAgentId: req.userInfo.id,
       }
       const like = await cryptidsService.like(formData)
+      res.send(like)
     } catch (error) {
       next(error)
     }

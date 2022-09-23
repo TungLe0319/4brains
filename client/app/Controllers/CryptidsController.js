@@ -58,9 +58,9 @@ export class CryptidsController {
   }
 
 
-  async likePost(cryptidId) {
+  async likePost(id) {
     try {
-      await cryptidsService.likePost(cryptidId)
+      await cryptidsService.likePost(id)
     } catch (error) {
       console.error('[likePost]', error)
       Pop.error(error)
