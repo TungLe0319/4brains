@@ -7,14 +7,9 @@ export class Cryptid {
     this.imgUrl = data.imgUrl
     this.location = data.location
     this.description = data.description
-<<<<<<< HEAD
-    this.likers = data.likes || 0
-
-=======
     this.likes = data.likes || 0
     this.dislikes = data.dislikes || 0
     this.popularity = (data.likes - data.dislikes)
->>>>>>> d9a449ddf8ea98750bd695f0bcfb544955b22b66
   }
 
   get CryptidTemplate() {
