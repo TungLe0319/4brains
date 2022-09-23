@@ -7,8 +7,9 @@ this.name = data.name
 this.imgUrl = data.imgUrl
 this.location = data.location
 this.description = data.description
-this.likers = data.likes || 0
-
+this.likes = data.likes || 0
+this.dislikes = data.dislikes || 0
+this.popularity = (data.likes - data.dislikes)
   }
 
   get CryptidTemplate() {

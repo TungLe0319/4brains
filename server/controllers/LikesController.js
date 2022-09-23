@@ -17,7 +17,6 @@ export class LikesController extends BaseController{
       const formData = {
         cryptidId: req.body.cryptidId,
         fieldAgentId: req.userInfo.id,
-        value: 1
       }
       const like = await cryptidsService.like(formData)
     } catch (error) {
