@@ -16,7 +16,7 @@ export class LikesController extends BaseController {
   async dislike(req, res, next) {
     try {
       const formData = {
-        cryptidId: req.body.cryptidId,
+        cryptidId: req.body.id,
         fieldAgentId: req.userInfo.id,
       }
       const dislike = await cryptidsService.dislike(formData)
