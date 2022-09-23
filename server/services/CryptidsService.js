@@ -2,6 +2,17 @@ import { dbContext } from "../db/DbContext.js"
 import { BadRequest, Forbidden } from "../utils/Errors.js"
 
 class CryptidsService{
+  async getLikes(query = {}){
+    const likes = await dbContext.Likes.find(query).populate('cryptid')
+    return likes
+  }
+  
+  
+  async like(formData) {
+   const cryptid = await this.getCryptidById(formData.cryptidId)
+   const like= await dbContext.Likes.create(formData)
+   await like.populate('cryptid')
+  }
   async deleteCryptid(id, userInfo) {
     const cryptid = await this.getCryptidById(id)
     if(cryptid.agentId != userInfo.id){
