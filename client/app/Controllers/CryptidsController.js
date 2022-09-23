@@ -46,4 +46,14 @@ export class CryptidsController {
       Pop.error(error);
     }
   }
+
+  async removeCryptid(id) {
+    try {
+      if (await Pop.confirm())
+        await cryptidsService.removeCryptid(id)
+    } catch (error) {
+      console.error('[]', error)
+      Pop.error(error)
+    }
+  }
 }
