@@ -39,8 +39,8 @@ main {
   transition: all 0.3s ease-out;
 }
 
-.postCard:hover{
-    transform: scale(1.02);
+.postCard:hover {
+  transform: scale(1.02);
   transition: all 0.3s ease-out;
 }
 
@@ -54,14 +54,7 @@ main {
 }
 
 .headerbg {
-  height: 20vh;
-
-  /* always scale the image to the appropriate size of your screen */
-  background-size: contain;
-  background-image: url(https://wallpapercave.com/wp/wp3396934.jpg);
-  background-position: center;
-  /* keeps the image fixed while scrolling , neat effect. */
-  background-attachment: fixed;
+  background-color: rgba(40, 28, 28, 0.589);
 }
 
 .sticky-btn {
@@ -70,20 +63,26 @@ main {
   right: 15px;
 }
 
-.rotated{
+.rotated {
   transform: rotate(3deg);
 
 }
 
-.commentbg{
+.commentbg {
   background-image: url(https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimg.freepik.com%2Fpremium-photo%2Fnatural-recycled-paper-texture-background_118047-8916.jpg%3Fw%3D2000);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
 }
 
-.scrollme{
+.scrollme {
   max-height: 80vh;
+  overflow: auto;
+
+}
+
+.description {
+  max-height: 10vh;
   overflow: auto;
 
 }

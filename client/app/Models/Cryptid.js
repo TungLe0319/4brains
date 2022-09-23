@@ -2,6 +2,7 @@ export class Cryptid {
 
 
   constructor(data) {
+
     this.id = data.id
     this.name = data.name
     this.imgUrl = data.imgUrl
@@ -39,8 +40,10 @@ export class Cryptid {
                 </div>
                   <h5 class="text-decoration-underline">${this.name}</h5>
                   <p>${this.location}</p>
+                  </div>
+                  <div class ="description">
                   <small>${this.description}</small>
-                </div>
+                  </div>
                 </div>
                 <div>
                 <i class="mdi mdi-cancel text-danger selectable" onclick = "app.cryptidsController.removeCryptid('${this.id}')"></i>

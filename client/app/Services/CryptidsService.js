@@ -6,14 +6,14 @@ import { server } from "./AxiosService.js"
 
 class CryptidsService {
   async activeCryptid(id) {
+
     const res = await server.get(`api/cryptids/${id}`)
     console.log(res.data);
-    appState.activeCryptid = new ActiveCryptid(res.data)
+    // appState.activeCryptid = new ActiveCryptid(res.data)
   }
 
 
-  async likePost(id)
-  {
+  async likePost(id) {
     const res = await server.post(`/api/likes/like`, { id })
     console.log(res.data);
   }

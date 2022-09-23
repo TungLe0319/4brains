@@ -73,7 +73,7 @@ export class CryptidsController {
     try {
       await cryptidsService.activeCryptid(id)
     } catch (error) {
-      console.error('[]', error)
+      console.error('[activeCryptid]', error)
       Pop.error(error)
     }
   }
