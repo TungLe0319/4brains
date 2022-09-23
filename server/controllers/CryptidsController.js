@@ -14,10 +14,9 @@ export class CryptidsController extends BaseController {
   }
   async getCryptidbyId(req, res, next) {
     try {
-      throw new Error("Method not implemented.");
-    } catch (error) 
-    {
       
+    } catch (error) {
+      next(error)
     }
   }
 
