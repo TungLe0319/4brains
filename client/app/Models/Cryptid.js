@@ -27,7 +27,7 @@ this.popularity = (data.likes - data.dislikes)
                   <span> <i class="mdi mdi-comment fs-2 selectable"  data-bs-toggle="modal"
               data-bs-target="#postModal" onclick=""></i><small>6</small></span>
                   <span class="mx-3">
-                    <i class="mdi mdi-arrow-up-box text-success fs-4 selectable"></i><small>14</small></span
+                    <i class="mdi mdi-arrow-up-box text-success fs-4 selectable" onclick="app.cryptidsController.likePost('${this.id}')"></i><small></small></span
                   >
                   <span>
                     <i class="mdi mdi-arrow-down-box text-danger fs-4 selectable"></i
@@ -41,12 +41,15 @@ this.popularity = (data.likes - data.dislikes)
                   <p>${this.location}</p>
                   <small>${this.description}</small>
                 </div>
-              </div>
+                </div>
+                <div>
+                <i class="mdi mdi-cancel text-danger selectable" onclick = "app.cryptidsController.removeCryptid('${this.id}')"></i>
+                </div>
             </div>
 
    
     `;
   }
 
-  
+
 }
