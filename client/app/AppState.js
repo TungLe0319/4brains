@@ -16,7 +16,7 @@ class AppState extends EventEmitter {
   cryptids = []
 
   /** @type {import('./Models/ActiveCryptid').ActiveCryptid | null} */
-  activeCryptid = null
+  activeCryptids = null
 }
 
 export const appState = new Proxy(new AppState(), {
