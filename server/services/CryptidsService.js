@@ -3,7 +3,7 @@ import { BadRequest, Forbidden } from "../utils/Errors.js"
 
 class CryptidsService {
   async dislike(query = {}) {
-    const dislikes = await dbContext.Likes.find(query).populate('cryptid')
+    const dislikes = await dbContext.Dislikes.find(query).populate('cryptid')
     return dislikes
   }
   async getLikes(query = {}) {
