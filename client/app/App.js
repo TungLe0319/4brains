@@ -5,7 +5,7 @@ import { CryptidsController } from "./Controllers/CryptidsController.js";
 class App {
   authController = new AuthController();
  
-  cryptidsController = new CryptidsController
+  cryptidsController = new CryptidsController()
 }
 
 // @ts-ignore

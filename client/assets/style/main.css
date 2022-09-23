@@ -13736,7 +13736,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url(https://images4.alphacoders.com/858/858507.jpg);
+  background-image: url(https://media.cntraveler.com/photos/59d690455d63061cb02575bf/master/w_4000,h_3000,c_limit/Hoia-Baciu-GRNWYM.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -13746,7 +13746,9 @@ main {
 }
 
 .polaroid {
-  filter: sepia(80%);
+  filter: sepia(50%);
+  max-height: 10rem;
+  object-fit: cover;
 }
 
 .polaroid:hover {
@@ -13774,7 +13776,7 @@ main {
 }
 
 .headerbg {
-  height: 20vh1;
+  height: 20vh;
   /* always scale the image to the appropriate size of your screen */
   background-size: contain;
   background-image: url(https://wallpapercave.com/wp/wp3396934.jpg);
@@ -13798,6 +13800,11 @@ main {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.scrollme {
+  max-height: 80vh;
+  overflow: auto;
 }
 
 /*# sourceMappingURL=main.css.map */
