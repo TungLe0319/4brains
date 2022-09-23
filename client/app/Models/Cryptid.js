@@ -7,6 +7,7 @@ this.name = data.name
 this.imgUrl = data.imgUrl
 this.location = data.location
 this.description = data.description
+this.likers = data.likes || 0
 
   }
 
