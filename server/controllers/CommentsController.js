@@ -7,11 +7,21 @@ export class CommentsController extends BaseController {
   constructor() {
     super('api/comments')
     this.router
+      .get('', this.getAllComments)
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.postComment)
   }
 
+  async getAllComments(req, res, next) {
 
+    try {
+      const allcomments = await commentsService.getAllComments()
+      res.send(allcomments)
+    } catch (error) {
+      next(error)
+    }
+
+  }
 
   async postComment(req, res, next) {
     try {

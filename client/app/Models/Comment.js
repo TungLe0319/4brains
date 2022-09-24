@@ -4,6 +4,7 @@ export class Comment {
     this.body = data.body
     this.imgUrl = data.imgUrl
     this.id = data.id
+    this.cryptidId = data.cryptidId
   }
 
 

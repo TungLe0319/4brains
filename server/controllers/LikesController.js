@@ -10,7 +10,20 @@ export class LikesController extends BaseController {
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.like)
-      .get('', this.getLikes)
+      .post('/dislike', this.dislike)
+      .get('/like/', this.getLikes)
+  }
+  async dislike(req, res, next) {
+    try {
+      const formData = {
+        cryptidId: req.body.id,
+        fieldAgentId: req.userInfo.id,
+      }
+      const dislike = await cryptidsService.dislike(formData)
+      // res.send(dislike)
+    } catch (error) {
+      next(error)
+    }
   }
 
   async like(req, res, next) {

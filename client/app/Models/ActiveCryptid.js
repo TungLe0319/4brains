@@ -1,3 +1,5 @@
+import { appState } from "../AppState.js"
+
 export class ActiveCryptid {
   constructor(data) {
 
@@ -6,7 +8,7 @@ export class ActiveCryptid {
     this.imgUrl = data.imgUrl
     this.location = data.location
     this.description = data.description
-    this.body = data.body
+
 
 
   }
@@ -40,7 +42,7 @@ export class ActiveCryptid {
                   </div>
                 </div>
                 <div class="d-flex justify-content-center" >
-                  <div class="card commentbg mb-5 mt-2 mx-2 p-4  scrollable-y" id = "active-comments">
+                  <div class="card commentbg mb-5 mt-2 mx-2 p-4  scrollable-y" id="active-comments">
 
                     
                   </div>
@@ -51,5 +53,11 @@ export class ActiveCryptid {
     `
   }
 
+  get Comments() {
+    let template = ''
+    let comments = appState.comments.filter(c => c.cryptidId == this.id)
+    comments.forEach(c => template += c.CommentTemplate)
+    return comments
+  }
 
 }

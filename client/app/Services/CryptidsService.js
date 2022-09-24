@@ -1,6 +1,7 @@
 
 import { appState } from "../AppState.js";
 import { ActiveCryptid } from "../Models/ActiveCryptid.js";
+import { Comment } from "../Models/Comment.js";
 import { Cryptid } from "../Models/Cryptid.js";
 import { server } from "./AxiosService.js"
 
@@ -8,9 +9,9 @@ class CryptidsService {
   async activeCryptid(id) {
     
     const res = await server.get(`api/cryptids/${id}`)
-    console.log(res.data);
+    // console.log(res.data);
     appState.activeCryptids = new ActiveCryptid(res.data)
-    console.log(appState.activeCryptids);
+    // console.log(appState.activeCryptids);
   }
   
   async dislikePost(id) {
@@ -26,10 +27,11 @@ class CryptidsService {
     appState.cryptids = appState.cryptids
   }
   async getComments(id) {
+
     const res = await server.get(`/api/cryptids/${id}/comments`)
     console.log(res.data);
-    appState.activeComments = res.data.map(a => new Comment(a))
-    console.log(appState.activeComments);
+    appState.comments = res.data.map(c => new Comment(c))
+    console.log(appState.comments);
   }
 
   async likePost(id) {
