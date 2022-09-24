@@ -43,7 +43,7 @@ export class ActiveCryptid {
                 </div>
                 <div class="d-flex justify-content-center" >
                   <div class="card commentbg mb-5 mt-2 mx-2 p-4  scrollable-y" id="active-comments">
-
+                  ${this.Comments}
                     
                   </div>
                 </div>
@@ -53,11 +53,11 @@ export class ActiveCryptid {
     `
   }
 
-  // get Comments() {
-  //   let template = ''
-  //   let comments = appState.comments.filter(c => c.cryptidId == this.id)
-  //   comments.forEach(c => template += c.CommentTemplate)
-  //   return comments
-  // }
+  get Comments() {
+    let template = ''
+    let comments = appState.comments.filter(c => c.cryptidId == this.id)
+    comments.forEach(c => template += c.CommentTemplate)
+    return template
+  }
 
 }

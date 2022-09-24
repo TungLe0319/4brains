@@ -7,7 +7,7 @@ import { server } from "./AxiosService.js"
 
 class CryptidsService {
   async activeCryptid(id) {
-
+    debugger
     const res = await server.get(`api/cryptids/${id}`)
     // console.log(res.data);
     appState.activeCryptids = new ActiveCryptid(res.data)
