@@ -8,8 +8,7 @@ export const CryptidSchema = new Schema(
     location: { type: String, default: 'The hazy nightmares of humanity' },
     description: { type: String, required: true },
     agentId: { type: Schema.Types.ObjectId, ref: 'Account', required: true },
-    likes:  { type: Number},
-    dislikes: { type: Number}
+
 
   },
   { timestamps: true, toJSON: { virtuals: true } })
