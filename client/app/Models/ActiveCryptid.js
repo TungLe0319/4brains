@@ -60,7 +60,7 @@ export class ActiveCryptid {
     </div>
     <div class="d-flex align-items-center">
     <small>
-    <button type="submit" class="btn btn-sm">Submit</button>
+    <button type="submit" class="btn btn-sm btn-outline-dark ms-4">Submit</button>
     </small>
     
     </div>
