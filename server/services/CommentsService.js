@@ -1,6 +1,18 @@
 import { dbContext } from '../db/DbContext.js';
+import { Forbidden } from "../utils/Errors.js";
 
 class CommentsService {
+  // async removeComment(id, userInfo) {
+  //   const comment = await this.getComments(id)
+  //   if (agent.Id != userInfo.id) {
+  //     throw new Forbidden('not yo comment, not yo problem')
+  //   }
+  //   await comment.delete()
+  //   return comment
+  // }
+
+
+
   async getComments() {
     const allComments = await dbContext.Comments.find().populate('agent', 'name picture');
     // console.log(allComments);

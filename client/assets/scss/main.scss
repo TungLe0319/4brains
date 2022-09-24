@@ -19,6 +19,8 @@ body {
   background-position: center;
 }
 
+
+
 main {
   flex-grow: 1;
 }
@@ -34,12 +36,13 @@ main {
   transition: all 0.3s ease-in-out;
 }
 
-.activePolaroid{
-    filter: sepia(50%);
+.activePolaroid {
+  filter: sepia(50%);
 }
-.activePolaroid:hover{
-    filter: sepia(0%);
-      transition: all 0.3s ease-in-out;
+
+.activePolaroid:hover {
+  filter: sepia(0%);
+  transition: all 0.3s ease-in-out;
 }
 
 .cardcomment:hover {

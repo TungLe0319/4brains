@@ -10,7 +10,7 @@ export class Cryptid {
     this.description = data.description
     this.likes = data.likes || 0
     this.dislikes = data.dislikes || 0
-  
+
   }
 
   get CryptidTemplate() {
@@ -19,8 +19,12 @@ export class Cryptid {
               <div class="d-flex justify-content-center">
                 <img
                   src="${this.imgUrl}"
-                  alt=""
+                  
+                  alt="${this.name}"
                   class="img-fluid rounded mt-2 elevation-4 polaroid"
+                  onclick="app.cryptidsController.activeCryptid('${this.id}')"
+                   data-bs-toggle="modal"
+              data-bs-target="#postModal"
                 />
               </div>
               <div class="card-body">
@@ -30,7 +34,7 @@ export class Cryptid {
                   <span class="mx-3">
                     <i class="mdi mdi-arrow-up-box text-success fs-4 selectable" onclick="app.cryptidsController.likePost('${this.id}')"></i></span>
                     <div class ="bg-dark text-danger text-center 
-                    w-25 border border-light rounded opacity-75 fs-3">${this.likes-this.dislikes}
+                    w-25 border border-light rounded opacity-75 fs-3">${this.likes - this.dislikes}
                     </div>
 
                     <span>

@@ -7,8 +7,9 @@ export class ActiveCryptid {
     this.imgUrl = data.imgUrl;
     this.location = data.location;
     this.description = data.description;
-    this.agent= data.agent.name
+    this.agent = data.agent.name
     this.agentImg = data.agent.picture
+    this.date = data.createdAt.substring(0, 10)
   }
 
   get CommentsModalTemplate() {
@@ -28,6 +29,19 @@ export class ActiveCryptid {
                 <img
                   src="${this.imgUrl}"
                   alt="" class="rounded activePolaroid img-fluid elevation-3" />
+                  <div class="mt-3 p-5">
+                  <p class = "fw-bold  border-bottom border-dark ">
+                  Spotted:
+                  <span class= "ms-2">
+                  ${this.location}
+                  ${this.date}
+                  </p>
+                  </span>
+                  <p class = "">
+                  ${this.description}
+                  </p>
+                  </div>
+                  
               </div>
               <div class="col-md-6">
                 <div class=" justify-content-end d-flex ">
@@ -42,7 +56,7 @@ export class ActiveCryptid {
     <div class="d-flex ">
     <div class="form-floating mb-3">
     <input type="text" class="form-control" id="body" name="body" placeholder="">
-    <label for="body">Comment</label>
+    <label for="body">Comment if you dare</label>
     </div>
     <div class="d-flex align-items-center">
     <small>
@@ -61,7 +75,7 @@ export class ActiveCryptid {
                       </div>
                 </div>
                 <div class="d-flex justify-content-center" >
-                  <div class="card commentbg mb-5 mt-2 mx-2 p-4  scrollable-y" id="active-comments">
+                  <div class="card mb-5 mt-2 mx-2 p-4  scrollable-y bg-light" id="active-comments">
                   ${this.Comments}
                     
                   </div>
