@@ -28,10 +28,13 @@ export class ActiveCryptid {
               <div class="col-md-6 ">
                 <img 
                   src="${this.imgUrl}"
-                  alt="" class="rounded activePolaroid img-fluid elevation-3 border border-dark" />
+                  alt="" class="rounded activePolaroid elevation-3 border border-dark d-flex img-fluid" />
                   <div class="mt-3 p-5">
+                  <h2>
+                    ${this.name}
+                  </h2>
                   <p class = "fw-bold  border-bottom border-dark ">
-                  Spotted:
+                  Last Seen:
                   <span class= "ms-2">
                   ${this.location}
                   ${this.date}
@@ -75,7 +78,7 @@ export class ActiveCryptid {
                       </div>
                 </div>
                 <div class="d-flex justify-content-center " >
-                  <div class="card mb-5 mt-2 mx-2 p-4  scrollable-y bg-light active-cryptid border border-dark text-break" id="active-comments" style= "height: 22rem">
+                  <div class="card mb-5 mt-2 mx-2 p-4  scrollable-y bg-light active-cryptid border border-dark text-break" id="active-comments" style= "height: 27rem">
                   ${this.Comments}
                     
                   </div>
