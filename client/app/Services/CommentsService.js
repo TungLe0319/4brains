@@ -1,11 +1,11 @@
 class CommentsService {
 
-  async addComment(){
+  async addComment(formData){
 
   }
 
 async deleteComment(){
-  
+
 }
 }
 

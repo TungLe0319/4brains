@@ -1,19 +1,13 @@
-import { appState } from "../AppState.js"
+import { appState } from '../AppState.js';
 
 export class ActiveCryptid {
   constructor(data) {
-
-    this.id = data.id
-    this.name = data.name
-    this.imgUrl = data.imgUrl
-    this.location = data.location
-    this.description = data.description
-
-
-
+    this.id = data.id;
+    this.name = data.name;
+    this.imgUrl = data.imgUrl;
+    this.location = data.location;
+    this.description = data.description;
   }
-
-
 
   get CommentsModalTemplate() {
     return /*html*/ `
@@ -31,7 +25,7 @@ export class ActiveCryptid {
                 <div class="d-flex justify-content-between">
                   <div>
                     <span>
-                      <i class="mdi mdi-plus-box fs-5 selectable"></i></span>
+                      <i class="mdi mdi-plus-box fs-5 selectable" onclick="app.commentsController.drawCommentForm()"></i></span>
                   </div>
                   <div>
                     <span>
@@ -50,14 +44,13 @@ export class ActiveCryptid {
               </div>
             </div>
     
-    `
+    `;
   }
 
   get Comments() {
-    let template = ''
-    let comments = appState.comments.filter(c => c.cryptidId == this.id)
-    comments.forEach(c => template += c.CommentTemplate)
-    return template
+    let template = '';
+    let comments = appState.comments.filter((c) => c.cryptidId == this.id);
+    comments.forEach((c) => (template += c.CommentTemplate));
+    return template;
   }
-
 }
