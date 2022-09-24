@@ -47,6 +47,8 @@ class CryptidsService {
     const cryptids = await dbContext.Cryptids.find()
     return cryptids
   }
+
+  
 }
 
 export const cryptidsService = new CryptidsService()

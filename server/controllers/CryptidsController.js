@@ -1,4 +1,5 @@
 import { Auth0Provider } from "@bcwdev/auth0provider";
+import { commentsService } from "../services/CommentsService.js";
 import { cryptidsService } from "../services/CryptidsService.js";
 import BaseController from "../utils/BaseController.js";
 
