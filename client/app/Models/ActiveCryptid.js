@@ -6,6 +6,9 @@ export class ActiveCryptid {
     this.imgUrl = data.imgUrl
     this.location = data.location
     this.description = data.description
+    this.body = data.body
+
+
   }
 
 
@@ -37,15 +40,9 @@ export class ActiveCryptid {
                   </div>
                 </div>
                 <div class="d-flex justify-content-center" >
-                  <div class="card commentbg mb-5 mt-2 mx-2 p-4  scrollable-y">
+                  <div class="card commentbg mb-5 mt-2 mx-2 p-4  scrollable-y" id = "active-comments">
 
-                    <div class="border border-dark d-flex mb-3 rotated cardcomment">
-                      <span class="ms-2"><i class="mdi mdi-human fs-3"></i></span>
-                      <div class="p-2 ">
-                        <h5> </h5>
-                        <small></small>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -54,10 +51,5 @@ export class ActiveCryptid {
     `
   }
 
-  get CommentTemplate(){
-return /*html*/ `
-   
-    
-    `;
-  }
+
 }

@@ -10,10 +10,19 @@ export class CryptidsController extends BaseController {
     this.router
       .get('', this.getCryptids)
       .get('/:id', this.getCryptidById)
+      .get('/:id/comments', this.getComments)
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.addCryptid)
       .delete('/:id', this.deleteCryptid)
-    // .get('/:id/comments', this.getComments)
+  }
+  async getComments(req, res, next) {
+    try {
+      const comments = await commentsService.getComments()
+      res.send(comments)
+    } catch (error) {
+
+      next(error)
+    }
   }
   async getCryptidById(req, res, next) {
     try {

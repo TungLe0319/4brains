@@ -83,11 +83,14 @@ export class CryptidsController {
 
     try {
       await cryptidsService.activeCryptid(id)
+      await cryptidsService.getComments(id)
     } catch (error) {
       console.error('[activeCryptid]', error)
       Pop.error(error)
     }
   }
 
-  
+
+
+
 }

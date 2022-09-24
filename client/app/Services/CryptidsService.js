@@ -12,7 +12,12 @@ class CryptidsService {
     appState.activeCryptids = new ActiveCryptid(res.data)
     console.log(appState.activeCryptids);
   }
-
+  async getComments(id) {
+    const res = await server.get(`/api/cryptids/${id}/comments`)
+    console.log(res.data);
+    appState.activeComments = res.data.map(a => new Comment(a))
+    console.log(appState.activeComments);
+  }
 
   async likePost(id) {
     const res = await server.post(`/api/likes`, { id })
@@ -37,9 +42,7 @@ class CryptidsService {
     appState.cryptids = res.data.map(c => new Cryptid(c))
   }
 
-async getComments(id){
-  const res = await server.get(`/api/comments/`)
-}
+
 
 }
 

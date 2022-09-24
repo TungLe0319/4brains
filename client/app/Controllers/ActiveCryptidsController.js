@@ -13,8 +13,10 @@ function drawActiveCryptid() {
 
 }
 
-function drawComments(){
-setHTML('activecryptidcomments', )
+function drawComments() {
+  let template = ``
+  appState.activeComments.forEach(c => template += c.CommentTemplate)
+  setHTML('active-comments', template)
 }
 
 
