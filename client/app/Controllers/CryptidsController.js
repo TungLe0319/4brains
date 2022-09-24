@@ -16,7 +16,7 @@ function drawCryptids() {
   ;
 }
 function sortCryptids(){
-  appState.cryptids = appState.cryptids.sort((a, b)=>b.likes - a.likes )
+  appState.cryptids = appState.cryptids.sort((a, b)=>b.popularity - a.popularity )
   console.log(appState.cryptids);
   drawCryptids()
 }
@@ -85,7 +85,7 @@ export class CryptidsController {
   async dislikePost(id){
     try {
       await cryptidsService.dislikePost(id)
-      
+      sortCryptids()
     } catch (error) {
       console.error('[disliking]', error);
       Pop.error("You've already disliked this!")
