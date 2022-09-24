@@ -15,7 +15,7 @@ class CryptidsService {
 
 
   async likePost(id) {
-    const res = await server.post(`/api/likes/like`, { id })
+    const res = await server.post(`/api/likes`, { id })
     console.log(res.data);
   }
 
