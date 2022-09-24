@@ -14,6 +14,7 @@ export const CommentSchema = new Schema(
     //USER INFO
     //RELATIONSHIPS-------------------------------------V magic string here
     agentId: { type: ObjectId, required: true, ref: 'Account' },
+    
     cryptidId: { type: ObjectId, required: true, ref: 'Cryptid' }
   },
   {

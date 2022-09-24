@@ -57,6 +57,7 @@ export class CryptidsController extends BaseController {
   async getCryptids(req, res, next) {
     try {
       const cryptids = await cryptidsService.getCryptids()
+      
       res.send(cryptids)
     } catch (error) {
       next(error)

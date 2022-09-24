@@ -34,6 +34,14 @@ main {
   transition: all 0.3s ease-in-out;
 }
 
+.activePolaroid{
+    filter: sepia(50%);
+}
+.activePolaroid:hover{
+    filter: sepia(0%);
+      transition: all 0.3s ease-in-out;
+}
+
 .cardcomment:hover {
   transform: scale(1.02);
   transition: all 0.3s ease-out;
@@ -76,13 +84,13 @@ main {
 }
 
 .scrollme {
-  max-height: 80vh;
+  max-height: 85vh;
   overflow: auto;
 
 }
 
 .description {
-  max-height: 10vh;
+  max-height: 20vh;
   overflow: auto;
 
 }

@@ -46,7 +46,7 @@ class CryptidsService {
   }
 
   async getCryptids() {
-    const cryptids = await dbContext.Cryptids.find().populate('likes').populate('dislikes')
+    const cryptids = await dbContext.Cryptids.find().populate('likes').populate('dislikes').populate('agent', 'name picture')
     return cryptids
   }
 
