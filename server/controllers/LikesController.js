@@ -10,8 +10,8 @@ export class LikesController extends BaseController {
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.like)
-      // .post('/dislike', this.dislike)
-      // .get('/like/', this.getLikes)
+      .post('/dislike', this.dislike)
+      .get('/like/', this.getLikes)
   }
   async dislike(req, res, next) {
     try {
