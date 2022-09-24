@@ -10,7 +10,6 @@ function drawActiveCryptid() {
 
 
   setHTML('activecryptid', appState.activeCryptids.CommentsModalTemplate)
-
 }
 
 
@@ -24,7 +23,8 @@ function drawComments() {
 export class ActiveCryptidsController {
   constructor() {
     appState.on('activeCryptids', drawActiveCryptid);
-    appState.on('activeCryptids', drawComments);
+    // appState.on('activeCryptids', drawComments);
+    // appState.on('activeCryptids', drawComments);
 
     this.getComments()
 

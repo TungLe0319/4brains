@@ -15,7 +15,7 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Cryptid').Cryptid[]} */
   cryptids = []
 
-  /** @type {import('./Models/ActiveCryptid').ActiveCryptid | null} */
+  /** @type {import('./Models/ActiveCryptid').ActiveCryptid } */
   activeCryptids = null
 
 
