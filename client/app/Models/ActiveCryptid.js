@@ -37,16 +37,23 @@ export class ActiveCryptid {
                 <div class="d-flex justify-content-between mt-2">
                   <div>
                     <span>
-                      <i class="mdi mdi-plus-box fs-3  selectable" onclick="app.commentsController.drawCommentForm()"></i></span>
-                     
+                    
+                     <form onsubmit="app.commentsController.addComment()">
+    <div class="d-flex ">
+    <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="body" name="body" placeholder="">
+    <label for="body">Comment</label>
+    </div>
+    <div class="d-flex align-items-center">
+    <small>
+    <button type="submit" class="btn btn-sm">Submit</button>
+    </small>
+    
+    </div>
+    </div>
+    </form>
                   </div>
-                  <div>
-                    <span>
-                      <i class="mdi mdi-arrow-up-box fs-5 selectable"></i>
-                      <small>14</small></span>
-                    <span>
-                      <i class="mdi mdi-arrow-down-box fs-5 selectable"></i><small>5</small></span>
-                  </div>
+                 
                 </div>
                 <div>
                  <div id="commentForm">

@@ -9,13 +9,14 @@ function drawActiveCryptid() {
   }
 
   setHTML('activecryptid', appState.activeCryptids.CommentsModalTemplate);
+  
 }
 
 export class ActiveCryptidsController {
   constructor() {
     appState.on('activeCryptids', drawActiveCryptid);
-
-    this.getComments();
+this.getComments()
+  
   }
 
   async getComments() {

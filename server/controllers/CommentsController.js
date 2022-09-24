@@ -7,16 +7,17 @@ export class CommentsController extends BaseController {
   constructor() {
     super('api/comments')
     this.router
-      .get('', this.getAllComments)
+      .get('/:cryptidId', this.getComments)
       .use(Auth0Provider.getAuthorizedUserInfo)
-      .post('', this.postComment)
+      .post('/:cryptidId', this.postComment)
   }
 
-  async getAllComments(req, res, next) {
+  async getComments(req, res, next) {
 
     try {
-      const allcomments = await commentsService.getAllComments()
-      res.send(allcomments)
+
+      const comments = await commentsService.getComments()
+      res.send(comments)
     } catch (error) {
       next(error)
     }
@@ -25,10 +26,11 @@ export class CommentsController extends BaseController {
 
   async postComment(req, res, next) {
     try {
-
-      req.body.agentId = req.userInfo.id
+ 
+       const formData = req.body
+    
       // removed req.params.id to test something in .postComment()
-      const comment = await (await commentsService.postComment(req.body, req.params.id))
+      const comment = await (await commentsService.postComment(formData, req.params.cryptidId,req.userInfo))
       //NOTE Had to throw this one line down due to not working with .create or .post
       comment.populate('agent', 'name picture')
       res.send(comment)
