@@ -53,11 +53,11 @@ export class ActiveCryptid {
     `
   }
 
-  get Comments() {
-    let template = ''
-    let comments = appState.comments.filter(c => c.cryptidId == this.id)
-    comments.forEach(c => template += c.CommentTemplate)
-    return comments
-  }
+  // get Comments() {
+  //   let template = ''
+  //   let comments = appState.comments.filter(c => c.cryptidId == this.id)
+  //   comments.forEach(c => template += c.CommentTemplate)
+  //   return comments
+  // }
 
 }
