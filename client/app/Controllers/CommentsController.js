@@ -6,31 +6,37 @@ import { getFormData } from "../Utils/FormHandler.js"
 import { Pop } from "../Utils/Pop.js"
 import { setHTML } from "../Utils/Writer.js"
 
-export class CommentsController{
+export class CommentsController {
 
   constructor() {
-  
+
   }
 
-  async addComment(cryptidId){
-   
-try {
-  // @ts-ignore
-  window.event.preventDefault()
-  // @ts-ignore
-  const form = window.event.target
-  let formData = getFormData(form)
-  // @ts-ignore
-  formData.cryptidId = appState.activeCryptids.id
-  // @ts-ignore
+  async addComment(cryptidId) {
 
-    await commentsService.addComment(formData)
-  } catch (error) {
-    console.error('[addComment]',error)
-    Pop.error(error)
-  }
-  }
-  async deleteComment(){
+    try {
+      // @ts-ignore
+      window.event.preventDefault()
+      // @ts-ignore
+      const form = window.event.target
+      let formData = getFormData(form)
+      // @ts-ignore
+      formData.cryptidId = appState.activeCryptids.id
+      // @ts-ignore
 
+      await commentsService.addComment(formData)
+    } catch (error) {
+      console.error('[addComment]', error)
+      Pop.error(error)
+    }
+  }
+  async removeComment(id) {
+    try {
+      if (await Pop.confirm())
+        await commentsService.removeComment(id)
+    } catch (error) {
+      console.error('[remove comment]', error);
+      Pop.error(error)
+    }
   }
 }

@@ -3,11 +3,13 @@ import { Forbidden } from "../utils/Errors.js";
 
 class CommentsService {
   // async removeComment(id, userInfo) {
+  //   console.log(id, userInfo, 'remove coment');
+
   //   const comment = await this.getComments(id)
-  //   if (agent.Id != userInfo.id) {
+  //   if (comment != userInfo.id) {
   //     throw new Forbidden('not yo comment, not yo problem')
   //   }
-  //   await comment.delete()
+  //   await comment.remove()
   //   return comment
   // }
 

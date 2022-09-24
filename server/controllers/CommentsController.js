@@ -10,7 +10,7 @@ export class CommentsController extends BaseController {
       .get('/:cryptidId', this.getComments)
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('/:cryptidId', this.postComment)
-    // .delete('/:id', this.removeComment)
+      .delete('/:id', this.removeComment)
   }
 
   async getComments(req, res, next) {
@@ -43,12 +43,12 @@ export class CommentsController extends BaseController {
 
 
 
-  // async removeComment(req, res, next) {
-  //   try {
-  //     const comment = await commentsService.removeComment(req.params.id, req.userInfo)
-  //     res.send(comment)
-  //   } catch (error) {
-  //     next(error)
-  //   }
-  // }
+  async removeComment(req, res, next) {
+    try {
+      const comment = await commentsService.removeComment(req.params.id, req.userInfo)
+      res.send(comment)
+    } catch (error) {
+      next(error)
+    }
+  }
 }
