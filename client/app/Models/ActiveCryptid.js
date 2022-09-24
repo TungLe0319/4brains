@@ -15,7 +15,7 @@ export class ActiveCryptid {
   get CommentsModalTemplate() {
     return /*html*/ `
     <div class="row ">
-    <div class="col-md-12 d-flex mb-2  justify-content-center bg-dark text-light rounded p-2">
+    <div class="col-md-12 d-flex mb-2  justify-content-center bg-dark text-light rounded p-2 ">
     
      <img
                   src="${this.agentImg}"
@@ -26,9 +26,9 @@ export class ActiveCryptid {
                 </div>
     </div>
               <div class="col-md-6 ">
-                <img
+                <img 
                   src="${this.imgUrl}"
-                  alt="" class="rounded activePolaroid img-fluid elevation-3" />
+                  alt="" class="rounded activePolaroid img-fluid elevation-3 " />
                   <div class="mt-3 p-5">
                   <p class = "fw-bold  border-bottom border-dark ">
                   Spotted:
@@ -43,12 +43,12 @@ export class ActiveCryptid {
                   </div>
                   
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 ">
                 <div class=" justify-content-end d-flex ">
                
                   <button type="button" class="btn-close fs-2" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="d-flex justify-content-between mt-2">
+                <div class="d-flex justify-content-center mt-2">
                   <div>
                     <span>
                     
@@ -74,8 +74,8 @@ export class ActiveCryptid {
                       
                       </div>
                 </div>
-                <div class="d-flex justify-content-center" >
-                  <div class="card mb-5 mt-2 mx-2 p-4  scrollable-y bg-light" id="active-comments">
+                <div class="d-flex justify-content-center " >
+                  <div class="card mb-5 mt-2 mx-2 p-4  scrollable-y bg-light active-cryptid" id="active-comments" style= "height: 22rem">
                   ${this.Comments}
                     
                   </div>

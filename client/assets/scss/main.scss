@@ -25,6 +25,10 @@ main {
   flex-grow: 1;
 }
 
+.active-cryptid {
+  max-height: 20rem;
+}
+
 .polaroid {
   filter: sepia(50%);
   max-height: 10rem;
