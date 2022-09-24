@@ -31,6 +31,7 @@ class CryptidsService {
     const res = await server.get(`/api/cryptids/${id}/comments`)
     console.log(res.data);
     appState.comments = res.data.map(c => new Comment(c))
+    
     console.log(appState.comments);
   }
 
