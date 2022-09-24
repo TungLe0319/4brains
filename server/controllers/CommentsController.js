@@ -5,11 +5,11 @@ import BaseController from "../utils/BaseController.js";
 
 export class CommentsController extends BaseController {
   constructor() {
-    super('api/cryptids')
+    super('api/comments')
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
-      .post('/:id/comments', this.postComment)
-      .get('/:id/comments', this.getComments)
+      .post('', this.postComment)
+
   }
 
 
