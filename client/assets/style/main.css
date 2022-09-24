@@ -13756,11 +13756,11 @@ main {
   transition: all 0.3s ease-in-out;
 }
 
-.activePolariod {
+.activePolaroid {
   filter: sepia(50%);
 }
 
-.activePolariod:hover {
+.activePolaroid:hover {
   filter: sepia(0%);
   transition: all 0.3s ease-in-out;
 }
@@ -13811,7 +13811,7 @@ main {
 }
 
 .description {
-  max-height: 10vh;
+  max-height: 20vh;
   overflow: auto;
 }
 
