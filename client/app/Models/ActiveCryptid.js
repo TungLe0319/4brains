@@ -12,10 +12,10 @@ export class ActiveCryptid {
   get CommentsModalTemplate() {
     return /*html*/ `
     <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6 ">
                 <img
                   src="${this.imgUrl}"
-                  alt="" class="rounded polaroid img-fluid" />
+                  alt="" class="rounded activePolaroid img-fluid" />
               </div>
               <div class="col-md-6">
                 <div class=" justify-content-between d-flex ">

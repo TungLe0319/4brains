@@ -13756,6 +13756,15 @@ main {
   transition: all 0.3s ease-in-out;
 }
 
+.activePolariod {
+  filter: sepia(50%);
+}
+
+.activePolariod:hover {
+  filter: sepia(0%);
+  transition: all 0.3s ease-in-out;
+}
+
 .cardcomment:hover {
   transform: scale(1.02);
   transition: all 0.3s ease-out;

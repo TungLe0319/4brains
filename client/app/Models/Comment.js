@@ -12,7 +12,7 @@ export class Comment {
    <div class="border border-dark d-flex mb-3 rotated cardcomment">
                       <span class="ms-2"><i class="mdi mdi-human fs-3"></i></span>
                       <div class="p-2 ">
-                        <h5></h5>
+                        <h5>${this.name} ${this.imgUrl}</h5>
                         <small>${this.body}</small>
                       </div>
                     </div>
