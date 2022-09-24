@@ -9,11 +9,10 @@ export class CommentsController extends BaseController {
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.postComment)
-      
   }
 
 
- 
+
   async postComment(req, res, next) {
     try {
 

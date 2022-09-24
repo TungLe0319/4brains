@@ -49,6 +49,8 @@ class CryptidsService {
     const cryptids = await dbContext.Cryptids.find().populate('likes').populate('dislikes')
     return cryptids
   }
+
+  
 }
 
 export const cryptidsService = new CryptidsService()
