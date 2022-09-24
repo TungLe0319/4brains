@@ -15,8 +15,10 @@ export class ActiveCryptid {
   get CommentsModalTemplate() {
     return /*html*/ `
     <div class="row ">
-    <div class="col-md-12 d-flex mb-2  justify-content-center bg-dark text-light rounded p-2 border border-dark">
-    
+    <div class="col-md-12 d-flex mb-2  justify-content-center  text-dark rounded p-2 ">
+    <p class = "me-5 mt-2">
+    Posted by :
+    </p>
      <img
                   src="${this.agentImg}"
                   alt="" class="rounded img-fluid selectable" style="width:3rem;"/>
@@ -78,7 +80,7 @@ export class ActiveCryptid {
                       </div>
                 </div>
                 <div class="d-flex justify-content-center " >
-                  <div class="card mb-5 mt-2 mx-2 p-4  scrollable-y bg-light active-cryptid border border-dark text-break" id="active-comments" style= "height: 27rem">
+                  <div class="card mb-5 mt-2 mx-2 p-4  scrollable-y headerbg active-cryptid border border-dark text-break" id="active-comments" style= "height: 27rem">
                   ${this.Comments}
                     
                   </div>

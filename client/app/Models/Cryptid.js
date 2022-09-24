@@ -15,7 +15,7 @@ export class Cryptid {
 
   get CryptidTemplate() {
     return /*html */ `
-      <div class="card postCard elevation-3 mx-4 my-2 border border-dark" style="width: 17.5rem">
+      <div class="card postCard elevation-3 mx-4 my-2 border border-dark bg-light" style="width: 17.5rem">
               <div class="d-flex justify-content-center">
                 <img
                   src="${this.imgUrl}"

@@ -13745,6 +13745,10 @@ main {
   flex-grow: 1;
 }
 
+.active-cryptid {
+  max-height: 20rem;
+}
+
 .polaroid {
   filter: sepia(50%);
   max-height: 10rem;
@@ -13785,7 +13789,7 @@ main {
 }
 
 .headerbg {
-  background-color: rgba(40, 28, 28, 0.589);
+  background-image: url(https://cdn.wallpapersafari.com/37/41/QJVeW7.gif);
 }
 
 .sticky-btn {

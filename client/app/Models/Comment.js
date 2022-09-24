@@ -12,7 +12,7 @@ export class Comment {
 
   get CommentTemplate() {
     return /*html*/ `
-   <div class="border border-dark d-flex mb-3 rotated cardcomment commentbg rounded">
+   <div class="border border-dark d-flex mb-3 rotated cardcomment bg-light rounded">
                       <span class="ms-2"></span>
                       <div class="p-2 ">
                       <p>
