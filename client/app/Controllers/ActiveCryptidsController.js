@@ -13,17 +13,21 @@ function drawActiveCryptid() {
 
 }
 
+
 function drawComments() {
-  let template = ``
-  appState.activeComments.forEach(c => template += c.CommentTemplate)
+  let template = ''
+  let leftover = appState.comments.filter(c => c.cryptidId == appState.activeCryptids.id)
+  leftover.forEach(c => template += c.CommentTemplate)
   setHTML('active-comments', template)
 }
-
 
 export class ActiveCryptidsController {
   constructor() {
     appState.on('activeCryptids', drawActiveCryptid);
     appState.on('activeCryptids', drawComments);
+
+    this.getComments()
+
   }
 
   async getComments() {

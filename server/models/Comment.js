@@ -14,6 +14,7 @@ export const CommentSchema = new Schema(
     //USER INFO
     //RELATIONSHIPS-------------------------------------V magic string here
     agentId: { type: ObjectId, required: true, ref: 'Account' },
+    cryptidId: { type: ObjectId, required: true, ref: 'Cryptid' }
   },
   {
     timestamps: true,
@@ -23,9 +24,15 @@ export const CommentSchema = new Schema(
   }
 );
 
-CommentSchema.virtual('comment', {
-  localField: 'creatorId',
+CommentSchema.virtual('agent', {
+  localField: 'agentId',
   foreignField: '_id',
   justOne: true,
   ref: 'Account',
+});
+CommentSchema.virtual('cryptid', {
+  localField: 'cryptidId',
+  foreignField: '_id',
+  justOne: true,
+  ref: 'Cryptid',
 });
