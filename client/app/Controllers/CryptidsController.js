@@ -18,6 +18,7 @@ function drawCryptids() {
 function sortCryptids(){
   appState.cryptids = appState.cryptids.sort((a, b)=>b.likes - a.likes )
   console.log(appState.cryptids);
+  drawCryptids()
 }
 
 
@@ -26,7 +27,7 @@ export class CryptidsController {
   constructor() {
     this.getCryptids();
     appState.on('cryptids', drawCryptids);
-    sortCryptids()
+   
 
   }
 
@@ -75,6 +76,7 @@ export class CryptidsController {
   async likePost(id) {
     try {
       await cryptidsService.likePost(id)
+      sortCryptids()
     } catch (error) {
       console.error('[likePost]', error)
       Pop.error("You've already liked this")
