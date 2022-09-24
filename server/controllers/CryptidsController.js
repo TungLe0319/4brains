@@ -1,4 +1,5 @@
 import { Auth0Provider } from "@bcwdev/auth0provider";
+import { commentsService } from "../services/CommentsService.js";
 import { cryptidsService } from "../services/CryptidsService.js";
 import BaseController from "../utils/BaseController.js";
 
@@ -12,6 +13,15 @@ export class CryptidsController extends BaseController {
     .use(Auth0Provider.getAuthorizedUserInfo)
     .post('', this.addCryptid)
     .delete('/:id', this.deleteCryptid)
+    .get('/comments/:id', this.getComments)
+  }
+   async getComments(req, res, next) {
+    try {
+      const comments = await commentsService.getComments()
+      res.send(comments)
+    } catch (error) {
+      next(error)
+    }
   }
    async getCryptidById(req, res, next){
 try {
