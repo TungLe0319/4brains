@@ -16,7 +16,7 @@ function drawCryptids() {
   ;
 }
 function sortCryptids(){
-  appState.cryptids = appState.cryptids.sort((a, b)=>b.popularity - a.popularity )
+  appState.cryptids = appState.cryptids.sort((a, b)=>b.likes - a.dislikes )
   console.log(appState.cryptids);
   drawCryptids()
 }

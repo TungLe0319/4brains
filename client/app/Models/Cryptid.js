@@ -10,7 +10,7 @@ export class Cryptid {
     this.description = data.description
     this.likes = data.likes || 0
     this.dislikes = data.dislikes || 0
-    this.popularity = this.likes - this.dislikes
+  
   }
 
   get CryptidTemplate() {
