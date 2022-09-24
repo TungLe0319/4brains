@@ -40,7 +40,7 @@ try {
       } catch (error) {
         next(error)
       }
-    }
+    }   
 
 
   async getCryptids(req,res,next){
