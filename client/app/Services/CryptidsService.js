@@ -20,6 +20,7 @@ class CryptidsService {
   }
 
 
+
   async removeCryptid(id) {
     await server.delete(`api/cryptids/${id}`)
     appState.cryptids = appState.cryptids.filter(c => c.id != id)

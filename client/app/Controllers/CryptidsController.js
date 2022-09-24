@@ -13,13 +13,12 @@ function drawCryptids() {
   setHTML('posts', template);
   ;
 }
-function drawLikes(){
-  
+function drawLikes() {
   let likes = appState.cryptids.forEach(c => c.likes)
   setText('likes', likes)
-  
+
 }
-  
+
 
 export class CryptidsController {
   constructor() {
