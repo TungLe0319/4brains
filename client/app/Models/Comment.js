@@ -20,10 +20,10 @@ export class Comment {
     `;
   }
 
-  static CommentFormTemplate() {
+  get CommentFormTemplate() {
     return /*html*/ `
  
-    <form onsubmit="app.commentsController.addComment()">
+    <form onsubmit="app.commentsController.addComment('${this.cryptidId}')">
     <div class="form-floating mb-3">
   <input type="email" class="form-control" id="body" name="body" placeholder="name@example.com">
   <label for="body">Comment</label>

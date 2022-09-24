@@ -27,6 +27,7 @@ export class CommentsController extends BaseController {
     try {
 
       req.body.agentId = req.userInfo.id
+      // removed req.params.id to test something in .postComment()
       const comment = await (await commentsService.postComment(req.body, req.params.id))
       //NOTE Had to throw this one line down due to not working with .create or .post
       comment.populate('agent', 'name picture')

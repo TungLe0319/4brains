@@ -32,9 +32,7 @@ export class Cryptid {
                     <div class ="bg-dark text-danger text-center 
                     w-25 border border-light rounded opacity-75 fs-3">${this.likes-this.dislikes}
                     </div>
-                  
 
-                  
                     <span>
                     <i class="mdi mdi-arrow-down-box text-danger fs-4 selectable" onclick="app.cryptidsController.dislikePost('${this.id}')"></i></span>
                 </div>

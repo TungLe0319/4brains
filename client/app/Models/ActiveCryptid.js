@@ -30,14 +30,15 @@ export class ActiveCryptid {
                   alt="" class="rounded activePolaroid img-fluid elevation-3" />
               </div>
               <div class="col-md-6">
-                <div class=" justify-content-between d-flex ">
+                <div class=" justify-content-end d-flex ">
                
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button type="button" class="btn-close fs-2" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="d-flex justify-content-between mt-2">
                   <div>
                     <span>
                       <i class="mdi mdi-plus-box fs-3  selectable" onclick="app.commentsController.drawCommentForm()"></i></span>
+                     
                   </div>
                   <div>
                     <span>
@@ -46,6 +47,11 @@ export class ActiveCryptid {
                     <span>
                       <i class="mdi mdi-arrow-down-box fs-5 selectable"></i><small>5</small></span>
                   </div>
+                </div>
+                <div>
+                 <div id="commentForm">
+                      
+                      </div>
                 </div>
                 <div class="d-flex justify-content-center" >
                   <div class="card commentbg mb-5 mt-2 mx-2 p-4  scrollable-y" id="active-comments">
