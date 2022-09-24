@@ -2,25 +2,27 @@ import { dbContext } from "../db/DbContext.js"
 import { BadRequest, Forbidden } from "../utils/Errors.js"
 
 class CryptidsService {
-  async getDislikes(query = {}) {
-    const dislikes = await dbContext.Dislikes.find(query).populate('cryptid')
+  async getDislikes() {
+    const dislikes = await dbContext.Dislikes.find()
     return dislikes
   }
-  async getLikes(query = {}) {
-    const likes = await dbContext.Likes.find(query).populate('cryptid')
+  async getLikes() {
+    const likes = await dbContext.Likes.find()
     return likes
   }
 
   async dislike(formData){
     const cryptid = await this.getCryptidById(formData.cryptidId)
     const dislike = await dbContext.Dislikes.create(formData)
-    await (await dislike.populate('cryptid')).populate('dislikes')
+    return dislike
+    // await (await dislike.populate('cryptid')).populate('dislikes')
   }
 
   async like(formData) {
     const cryptid = await this.getCryptidById(formData.cryptidId)
     const like = await dbContext.Likes.create(formData)
-    await (await like.populate('cryptid')).populate('likes')
+    return like
+    // await (await like.populate('cryptid')).populate('likes')
   }
   async deleteCryptid(id, userInfo) {
     const cryptid = await this.getCryptidById(id)
@@ -32,7 +34,7 @@ class CryptidsService {
 
   }
   async getCryptidById(id) {
-    const cryptid = await dbContext.Cryptids.findById(id).populate('agent', 'name picture')
+    const cryptid = await dbContext.Cryptids.findById(id).populate('agent', 'name picture').populate('likes').populate('dislikes')
     if (!cryptid) {
       throw new BadRequest('Access Denied')
     }
@@ -44,7 +46,7 @@ class CryptidsService {
   }
 
   async getCryptids() {
-    const cryptids = await dbContext.Cryptids.find()
+    const cryptids = await dbContext.Cryptids.find().populate('likes').populate('dislikes')
     return cryptids
   }
 }

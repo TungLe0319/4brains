@@ -6,17 +6,36 @@ import { server } from "./AxiosService.js"
 
 class CryptidsService {
   async activeCryptid(id) {
-
+    
     const res = await server.get(`api/cryptids/${id}`)
     console.log(res.data);
     appState.activeCryptids = new ActiveCryptid(res.data)
     console.log(appState.activeCryptids);
   }
-
-
+  
+  async dislikePost(id) {
+    const res = await server.post(`/api/dislikes`, { id })
+   console.log(res.data);
+    let cryptid = appState.cryptids.find(c=> c.id == id)
+    // @ts-ignore
+    console.log(cryptid);
+    // @ts-ignore
+    cryptid.dislikes++
+    // @ts-ignore
+    console.log(cryptid);
+    appState.cryptids = appState.cryptids
+  }
   async likePost(id) {
     const res = await server.post(`/api/likes`, { id })
     console.log(res.data);
+    let cryptid = appState.cryptids.find(c=> c.id == id)
+    // @ts-ignore
+    // console.log(cryptid);
+    // // @ts-ignore
+    cryptid.likes++
+    // // @ts-ignore
+    // console.log(cryptid);
+    appState.cryptids = appState.cryptids
   }
 
 

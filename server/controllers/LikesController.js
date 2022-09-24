@@ -10,20 +10,7 @@ export class LikesController extends BaseController {
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.like)
-      // .post('/dislike', this.dislike)
-      // .get('/like/', this.getLikes)
-  }
-  async dislike(req, res, next) {
-    try {
-      const formData = {
-        cryptidId: req.body.id,
-        fieldAgentId: req.userInfo.id,
-      }
-      const dislike = await cryptidsService.dislike(formData)
-      // res.send(dislike)
-    } catch (error) {
-      next(error)
-    }
+      .get('', this.getLikes)
   }
 
   async like(req, res, next) {
@@ -38,12 +25,9 @@ export class LikesController extends BaseController {
       next(error)
     }
   }
-  async getLikes(req, res, next) {
+    async getLikes(req,res,next){
     try {
-      if (!req.query.cryptidId) {
-        throw new BadRequest('Error!')
-      }
-      const likes = await cryptidsService.getLikes(req.query)
+      const likes = await cryptidsService.getLikes()
       res.send(likes)
     } catch (error) {
       next(error)
