@@ -16,7 +16,7 @@ export class Comment {
                       <span class="ms-2"></span>
                       <div class="p-2 ">
                       <p>
-                      ${this.date}
+                      Posted: ${this.date}
                       </p>
                       <h5>
                       <img src=" ${this.agentPicture}" alt="" style="width:2rem;">

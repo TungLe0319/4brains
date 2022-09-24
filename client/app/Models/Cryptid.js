@@ -15,13 +15,13 @@ export class Cryptid {
 
   get CryptidTemplate() {
     return /*html */ `
-      <div class="card postCard elevation-3 mx-4 my-2" style="width: 17.5rem">
+      <div class="card postCard elevation-3 mx-4 my-2 border border-dark" style="width: 17.5rem">
               <div class="d-flex justify-content-center">
                 <img
                   src="${this.imgUrl}"
                   
                   alt="${this.name}"
-                  class="img-fluid rounded mt-2 elevation-4 polaroid"
+                  class="img-fluid rounded mt-2 elevation-4 polaroid border border-dark"
                   onclick="app.cryptidsController.activeCryptid('${this.id}')"
                    data-bs-toggle="modal"
               data-bs-target="#postModal"

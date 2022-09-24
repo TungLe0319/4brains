@@ -15,7 +15,7 @@ export class ActiveCryptid {
   get CommentsModalTemplate() {
     return /*html*/ `
     <div class="row ">
-    <div class="col-md-12 d-flex mb-2  justify-content-center bg-dark text-light rounded p-2 ">
+    <div class="col-md-12 d-flex mb-2  justify-content-center bg-dark text-light rounded p-2 border border-dark">
     
      <img
                   src="${this.agentImg}"
@@ -28,7 +28,7 @@ export class ActiveCryptid {
               <div class="col-md-6 ">
                 <img 
                   src="${this.imgUrl}"
-                  alt="" class="rounded activePolaroid img-fluid elevation-3 " />
+                  alt="" class="rounded activePolaroid img-fluid elevation-3 border border-dark" />
                   <div class="mt-3 p-5">
                   <p class = "fw-bold  border-bottom border-dark ">
                   Spotted:
@@ -56,7 +56,7 @@ export class ActiveCryptid {
     <div class="d-flex ">
     <div class="form-floating mb-3">
     <input type="text" class="form-control" id="body" name="body" placeholder="">
-    <label for="body">Comment if you dare</label>
+    <label for="body" class= "">Comment if you dare</label>
     </div>
     <div class="d-flex align-items-center">
     <small>
@@ -75,7 +75,7 @@ export class ActiveCryptid {
                       </div>
                 </div>
                 <div class="d-flex justify-content-center " >
-                  <div class="card mb-5 mt-2 mx-2 p-4  scrollable-y bg-light active-cryptid" id="active-comments" style= "height: 22rem">
+                  <div class="card mb-5 mt-2 mx-2 p-4  scrollable-y bg-light active-cryptid border border-dark text-break" id="active-comments" style= "height: 22rem">
                   ${this.Comments}
                     
                   </div>
