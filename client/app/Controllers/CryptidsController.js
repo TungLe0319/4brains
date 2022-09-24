@@ -35,7 +35,7 @@ export class CryptidsController {
   async getCryptids() {
     try {
       await cryptidsService.getCryptids();
-      console.log(appState.cryptids);
+      // console.log(appState.cryptids);
     } catch (error) {
       console.error('[getCryptids]', error);
       Pop.error(error);
