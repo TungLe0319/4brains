@@ -24,13 +24,14 @@ export class CryptidsController {
   constructor() {
     this.getCryptids();
     appState.on('cryptids', drawCryptids);
-    appState.on('cryptids', drawLikes)
+
   }
 
 
   async getCryptids() {
     try {
       await cryptidsService.getCryptids();
+      console.log(appState.cryptids);
     } catch (error) {
       console.error('[getCrytpids]', error);
       Pop.error(error);

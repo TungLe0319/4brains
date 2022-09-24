@@ -9,6 +9,7 @@ export const CryptidSchema = new Schema(
     description: { type: String, required: true },
     agentId: { type: Schema.Types.ObjectId, ref: 'Account', required: true },
 
+
   },
   { timestamps: true, toJSON: { virtuals: true } })
 
