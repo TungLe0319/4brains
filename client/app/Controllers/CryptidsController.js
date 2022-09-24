@@ -88,4 +88,6 @@ export class CryptidsController {
       Pop.error(error)
     }
   }
+
+  
 }

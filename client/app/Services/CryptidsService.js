@@ -37,6 +37,10 @@ class CryptidsService {
     appState.cryptids = res.data.map(c => new Cryptid(c))
   }
 
+async getComments(id){
+  const res = await server.get(`/api/comments/`)
+}
+
 }
 
 export const cryptidsService = new CryptidsService()
