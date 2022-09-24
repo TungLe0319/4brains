@@ -7,12 +7,17 @@ import { Pop } from '../Utils/Pop.js';
 import { setHTML, setText } from '../Utils/Writer.js';
 
 function drawCryptids() {
+  
   console.log('Draw Cryptids');
   let template = '';
-
+  
   appState.cryptids.forEach((c) => (template += c.CryptidTemplate));
   setHTML('posts', template);
   ;
+}
+function sortCryptids(){
+  appState.cryptids = appState.cryptids.sort((a, b)=>b.likes - a.likes )
+  console.log(appState.cryptids);
 }
 
 
@@ -21,6 +26,7 @@ export class CryptidsController {
   constructor() {
     this.getCryptids();
     appState.on('cryptids', drawCryptids);
+    sortCryptids()
 
   }
 
@@ -95,8 +101,6 @@ export class CryptidsController {
       Pop.error(error)
     }
   }
-
-
 
 
 }

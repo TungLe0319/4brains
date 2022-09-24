@@ -12,7 +12,6 @@ class CryptidsService {
     appState.activeCryptids = new ActiveCryptid(res.data)
     console.log(appState.activeCryptids);
   }
-<<<<<<< HEAD
   
   async dislikePost(id) {
     const res = await server.post(`/api/dislikes`, { id })
@@ -26,7 +25,6 @@ class CryptidsService {
     console.log(cryptid);
     appState.cryptids = appState.cryptids
   }
-=======
   async getComments(id) {
     const res = await server.get(`/api/cryptids/${id}/comments`)
     console.log(res.data);
@@ -34,7 +32,6 @@ class CryptidsService {
     console.log(appState.activeComments);
   }
 
->>>>>>> 59b12f10901333e6e083ec5b62c84c2a7f0b62dc
   async likePost(id) {
     const res = await server.post(`/api/likes`, { id })
     console.log(res.data);
