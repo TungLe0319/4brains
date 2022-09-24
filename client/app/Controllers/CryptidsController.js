@@ -7,23 +7,26 @@ import { Pop } from '../Utils/Pop.js';
 import { setHTML, setText } from '../Utils/Writer.js';
 
 function drawCryptids() {
+  
+  console.log('Draw Cryptids');
   let template = '';
-
+  
   appState.cryptids.forEach((c) => (template += c.CryptidTemplate));
   setHTML('posts', template);
   ;
 }
-function drawLikes() {
-  let likes = appState.cryptids.forEach(c => c.likes)
-  setText('likes', likes)
-
+function sortCryptids(){
+  appState.cryptids = appState.cryptids.sort((a, b)=>b.likes - a.likes )
+  console.log(appState.cryptids);
 }
+
 
 
 export class CryptidsController {
   constructor() {
     this.getCryptids();
     appState.on('cryptids', drawCryptids);
+    sortCryptids()
 
   }
 
@@ -33,7 +36,7 @@ export class CryptidsController {
       await cryptidsService.getCryptids();
       console.log(appState.cryptids);
     } catch (error) {
-      console.error('[getCrytpids]', error);
+      console.error('[getCryptids]', error);
       Pop.error(error);
     }
   }
@@ -77,6 +80,15 @@ export class CryptidsController {
       Pop.error("You've already liked this")
     }
   }
+  async dislikePost(id){
+    try {
+      await cryptidsService.dislikePost(id)
+      
+    } catch (error) {
+      console.error('[disliking]', error);
+      Pop.error("You've already disliked this!")
+    }
+  }
 
 
   async activeCryptid(id) {
@@ -89,8 +101,6 @@ export class CryptidsController {
       Pop.error(error)
     }
   }
-
-
 
 
 }

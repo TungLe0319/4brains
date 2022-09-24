@@ -38,12 +38,9 @@ export class LikesController extends BaseController {
       next(error)
     }
   }
-  async getLikes(req, res, next) {
+    async getLikes(req,res,next){
     try {
-      if (!req.query.cryptidId) {
-        throw new BadRequest('Error!')
-      }
-      const likes = await cryptidsService.getLikes(req.query)
+      const likes = await cryptidsService.getLikes()
       res.send(likes)
     } catch (error) {
       next(error)
