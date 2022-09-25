@@ -81,14 +81,16 @@ main {
 .sticky-down {
   position: fixed;
   bottom: 115px;
-  right: 33px;
+  right: 31px;
+  color: #890012;
 
 }
 
 .sticky-up {
   position: fixed;
-  right: 33px;
+  right: 31px;
   bottom: 166px;
+  color: #890012;
 
 }
 
@@ -116,11 +118,12 @@ main {
 
 }
 
-@media screen and (max-width: 800px){
-  html{
-  overflow-x:auto !important;
+@media screen and (max-width: 800px) {
+  html {
+    overflow-x: auto !important;
   }
-  body{
-  overflow-x:auto !important;
+
+  body {
+    overflow-x: auto !important;
   }
 }

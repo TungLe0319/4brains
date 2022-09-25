@@ -9,7 +9,8 @@ export class Cryptid {
     this.location = data.location
     this.description = data.description
     this.popularity = (data.likes-data.dislikes) || 0
-    
+    this.likes = data.likes
+    this.dislikes = data.dislikes
   
   }
 
@@ -34,7 +35,7 @@ export class Cryptid {
                   <span class="mx-3">
                     <i class="mdi mdi-arrow-up-box text-success fs-4 selectable" onclick="app.cryptidsController.likePost('${this.id}')"></i></span>
                     <div class ="bg-dark text-danger text-center 
-                    w-25 border border-light rounded opacity-75 fs-1">${this.popularity}
+                    w-25 border border-light rounded opacity-75 fs-1">${this.likes-this.dislikes}
                     </div>
 
                     <span>

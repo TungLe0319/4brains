@@ -76,6 +76,11 @@
       <!-- ------NEW ROW------ -->
       <div class="row mt-5">
         <div class="col-md-2">
+          <i class="mdi mdi-sort-ascending selectable text-light sticky-up fs-1" onclick="app.cryptidsController.sortUp()"></i>
+          <i class="mdi mdi-sort-descending selectable text-light sticky-down fs-1" onclick="app.cryptidsController.sortDown()"></i>
+
+        </div>
+        <div class="col-md-2">
 
           <button type="button" class="btn bg-danger text-light rounded-circle sticky-btn" data-bs-toggle="modal"
             data-bs-target="#postFormModal">
