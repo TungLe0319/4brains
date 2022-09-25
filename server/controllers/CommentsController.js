@@ -24,7 +24,9 @@ export class CommentsController extends BaseController {
 
   async getCommentById(req, res, next) {
     try {
-      const comment = await (await commentsService.getCommentById(req.params.commentId)).populate('agent', 'name picture');
+      const comment = await (
+        await commentsService.getCommentById(req.params.commentId)
+      ).populate('agent', 'name picture');
       res.send(comment);
     } catch (error) {
       next(error);
@@ -52,8 +54,9 @@ export class CommentsController extends BaseController {
     try {
       const comment = await commentsService.removeComment(
         req.params.cryptidId,
-       
-        req.userInfo
+
+        req.userInfo.id,
+        req.agentId
       );
       res.send(comment, 'Comment Removed');
     } catch (error) {

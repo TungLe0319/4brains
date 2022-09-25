@@ -15,11 +15,6 @@ function drawCryptids() {
   setHTML('posts', template);
   ;
 }
-function sortCryptids(){
-  appState.cryptids = appState.cryptids.sort((a, b)=>b.likes - a.dislikes )
-  console.log(appState.cryptids);
-  drawCryptids()
-}
 
 
 
@@ -27,10 +22,20 @@ export class CryptidsController {
   constructor() {
     this.getCryptids();
     appState.on('cryptids', drawCryptids);
-   
-
+    
+    
   }
-
+  
+   sortUp(){
+    appState.cryptids = appState.cryptids.sort((a, b)=>b.popularity - a.popularity )
+    console.log(appState.cryptids);
+    drawCryptids()
+  }
+  sortDown(){
+    appState.cryptids = appState.cryptids.sort((a, b)=>a.popularity - b.popularity )
+    console.log(appState.cryptids);
+    drawCryptids()
+  }
 
   async getCryptids() {
     try {
@@ -76,7 +81,7 @@ export class CryptidsController {
   async likePost(id) {
     try {
       await cryptidsService.likePost(id)
-      sortCryptids()
+      
     } catch (error) {
       console.error('[likePost]', error)
       Pop.error("You've already liked this")
@@ -85,7 +90,7 @@ export class CryptidsController {
   async dislikePost(id){
     try {
       await cryptidsService.dislikePost(id)
-      sortCryptids()
+      
     } catch (error) {
       console.error('[disliking]', error);
       Pop.error("You've already disliked this!")

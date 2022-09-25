@@ -16,13 +16,13 @@ export class ActiveCryptid {
     return /*html*/ `
     <div class="row ">
     <div class="col-md-12 d-flex mb-2  justify-content-center  text-dark rounded p-2 ">
-    <p class = "me-5 mt-2">
+    <p class = " mt-2 me-md-5">
     Posted by :
     </p>
      <img
                   src="${this.agentImg}"
                   alt="" class="rounded img-fluid selectable" style="width:3rem;"/>
-                <div class="d-flex align-items-center  ms-3">
+                <div class="d-flex align-items-center  mx-2">
                 
           <h2>  ${this.agent}  </h2>
                 </div>
@@ -31,7 +31,7 @@ export class ActiveCryptid {
                 <img 
                   src="${this.imgUrl}"
                   alt="" class="rounded activePolaroid elevation-3 border border-dark d-flex img-fluid" />
-                  <div class="mt-3 p-5">
+                  <div class="mt-3 p-md-5">
                   <h2>
                     ${this.name}
                   </h2>

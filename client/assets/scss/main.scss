@@ -78,6 +78,22 @@ main {
   right: 15px;
 }
 
+.sticky-down {
+  position: fixed;
+  bottom: 115px;
+  right: 31px;
+  color: #890012;
+
+}
+
+.sticky-up {
+  position: fixed;
+  right: 31px;
+  bottom: 166px;
+  color: #890012;
+
+}
+
 .rotated {
   transform: rotate(3deg);
 
@@ -100,4 +116,14 @@ main {
   max-height: 20vh;
   overflow: auto;
 
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    overflow-x: auto !important;
+  }
+
+  body {
+    overflow-x: auto !important;
+  }
 }

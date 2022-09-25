@@ -32,6 +32,7 @@
         <h1 class="m-auto">The Truth Is Out There...</h1>
 
       </div>
+      
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -59,11 +60,11 @@
                 <div class="border-bottom border-dark border-3">
                   <span> <i class="mdi mdi-comment fs-2 selectable"  data-bs-toggle="modal"
               data-bs-target="#postModal"></i></span>
-                  <span class="mx-3">
-                    <i class="mdi mdi-arrow-up-box fs-2 selectable"></i>14</span
-                  >
-                  <span>
-                    <i class="mdi mdi-arrow-down-box fs-2 selectable"></i
+              <span class="mx-3">
+                <i class="mdi mdi-arrow-up-box fs-2 selectable"></i>14</span
+                >
+                <span>
+                  <i class="mdi mdi-arrow-down-box fs-2 selectable"></i
                     >5</span
                   >
                 </div>
@@ -76,6 +77,11 @@
       </div>
       <!-- ------NEW ROW------ -->
       <div class="row mt-5">
+        <div class="col-md-2">
+          <i class="mdi mdi-sort-ascending selectable text-light sticky-up fs-1" onclick="app.cryptidsController.sortUp()"></i>
+          <i class="mdi mdi-sort-descending selectable text-light sticky-down fs-1" onclick="app.cryptidsController.sortDown()"></i>
+
+        </div>
         <div class="col-md-2">
 
           <button type="button" class="btn bg-danger text-light rounded-circle sticky-btn" data-bs-toggle="modal"

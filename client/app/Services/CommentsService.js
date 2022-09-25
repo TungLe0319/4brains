@@ -5,7 +5,8 @@ import { server } from "./AxiosService.js";
 class CommentsService {
   async removeComment(id) {
     await server.delete(`api/comments/${id}`)
-    appState.comments = appState.comments.filter((c) => c.id != id)
+   let  leftovers  = appState.comments.filter((c) => c.id != id)
+ appState.comments = leftovers
     appState.emit('comments')
   }
 
