@@ -10,20 +10,11 @@ export class CryptidsController extends BaseController {
     this.router
       .get('', this.getCryptids)
       .get('/:id', this.getCryptidById)
-      .get('/:id/comments', this.getComments)
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.addCryptid)
       .delete('/:id', this.deleteCryptid)
   }
-  async getComments(req, res, next) {
-    try {
-      const comments = await commentsService.getComments()
-      res.send(comments)
-    } catch (error) {
-
-      next(error)
-    }
-  }
+  
   async getCryptidById(req, res, next) {
     try {
       const cryptid = await (await cryptidsService.getCryptidById(req.params.id)).populate('agent', 'name picture')
@@ -57,6 +48,7 @@ export class CryptidsController extends BaseController {
   async getCryptids(req, res, next) {
     try {
       const cryptids = await cryptidsService.getCryptids()
+
       res.send(cryptids)
     } catch (error) {
       next(error)

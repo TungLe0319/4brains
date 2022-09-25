@@ -13745,6 +13745,10 @@ main {
   flex-grow: 1;
 }
 
+.active-cryptid {
+  max-height: 20rem;
+}
+
 .polaroid {
   filter: sepia(50%);
   max-height: 10rem;
@@ -13752,6 +13756,15 @@ main {
 }
 
 .polaroid:hover {
+  filter: sepia(0%);
+  transition: all 0.3s ease-in-out;
+}
+
+.activePolaroid {
+  filter: sepia(50%);
+}
+
+.activePolaroid:hover {
   filter: sepia(0%);
   transition: all 0.3s ease-in-out;
 }
@@ -13776,7 +13789,7 @@ main {
 }
 
 .headerbg {
-  background-color: rgba(40, 28, 28, 0.589);
+  background-image: url(https://thumbs.dreamstime.com/z/grungy-abstraction-4956389.jpg);
 }
 
 .sticky-btn {
@@ -13809,13 +13822,22 @@ main {
 }
 
 .scrollme {
-  max-height: 80vh;
+  max-height: 85vh;
   overflow: auto;
 }
 
 .description {
-  max-height: 10vh;
+  max-height: 20vh;
   overflow: auto;
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    overflow-x: auto !important;
+  }
+  body {
+    overflow-x: auto !important;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

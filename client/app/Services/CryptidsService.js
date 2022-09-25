@@ -6,11 +6,10 @@ import { server } from './AxiosService.js';
 
 class CryptidsService {
   async activeCryptid(id) {
-    debugger;
     const res = await server.get(`api/cryptids/${id}`);
-    // console.log(res.data);
+    console.log(res.data);
     appState.activeCryptids = new ActiveCryptid(res.data);
-    // console.log(appState.activeCryptids);
+    console.log(appState.activeCryptids);
   }
 
   async dislikePost(id) {
@@ -26,10 +25,10 @@ class CryptidsService {
     appState.cryptids = appState.cryptids;
   }
   async getComments(id) {
-    const res = await server.get(`/api/cryptids/${id}/comments`);
-    // console.log(res.data);
+    const res = await server.get(`/api/comments/${id}`);
+    console.log(res.data,'string comments');
     appState.comments = res.data.map((c) => new Comment(c));
-    // console.log(appState.comments);
+    console.log(appState.comments);
   }
 
   async likePost(id) {

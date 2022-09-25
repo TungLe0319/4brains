@@ -1,38 +1,66 @@
-import { Auth0Provider } from "@bcwdev/auth0provider";
-import { commentsService } from "../services/CommentsService.js";
-import BaseController from "../utils/BaseController.js";
-
+import { Auth0Provider } from '@bcwdev/auth0provider';
+import { commentsService } from '../services/CommentsService.js';
+import BaseController from '../utils/BaseController.js';
 
 export class CommentsController extends BaseController {
   constructor() {
-    super('api/comments')
+    super('api/comments');
     this.router
-      .get('', this.getAllComments)
+      .get('/:cryptidId', this.getComments)
+      .get('/:commentId', this.getCommentById)
       .use(Auth0Provider.getAuthorizedUserInfo)
-      .post('', this.postComment)
+      .post('/:cryptidId', this.postComment)
+      .delete('/:cryptidId', this.removeComment);
   }
 
-  async getAllComments(req, res, next) {
-
+  async getComments(req, res, next) {
     try {
-      const allcomments = await commentsService.getAllComments()
-      res.send(allcomments)
+      const comments = await commentsService.getComments();
+      res.send(comments);
     } catch (error) {
-      next(error)
+      next(error);
     }
+  }
 
+  async getCommentById(req, res, next) {
+    try {
+      const comment = await (
+        await commentsService.getCommentById(req.params.commentId)
+      ).populate('agent', 'name picture');
+      res.send(comment);
+    } catch (error) {
+      next(error);
+    }
   }
 
   async postComment(req, res, next) {
     try {
+      const formData = req.body;
 
-      req.body.agentId = req.userInfo.id
-      const comment = await (await commentsService.postComment(req.body, req.params.id))
+      const comment = await await commentsService.postComment(
+        formData,
+        req.params.cryptidId,
+        req.userInfo
+      );
       //NOTE Had to throw this one line down due to not working with .create or .post
-      comment.populate('agent', 'name picture')
-      res.send(comment)
+      comment.populate('agent', 'name picture');
+      res.send(comment);
     } catch (error) {
-      next(error)
+      next(error);
+    }
+  }
+
+  async removeComment(req, res, next) {
+    try {
+      const comment = await commentsService.removeComment(
+        req.params.cryptidId,
+
+        req.userInfo.id,
+        req.agentId
+      );
+      res.send(comment, 'Comment Removed');
+    } catch (error) {
+      next(error);
     }
   }
 }

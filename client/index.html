@@ -16,51 +16,47 @@
 
 
 
-<body>
-  <header class="">
-    <nav class="navbar  navbar-expand text-light headerbg">
+<body style="overflow-y: hidden;">
+  <header class="p-2 headerbg elevation-5">
+    <nav class="navbar  navbar-expand text-light  ">
       <div>
         <a class="navbar-brand" href="#">
 
-          <span class="ml-2 ms-2">4brains</span>
+          <span class="ml-2 ms-2 text-light ">4brains <img src="https://cdn-icons-png.flaticon.com/512/2959/2959056.png" alt="" style="width:4rem ;" class="rounded elevation-3" title="Art Illustration GIF By Li-Anne Dias"></i></span>
         </a>
 
       </div>
-      <div class="d-flex justify-content-between align-items-center">
-        <h1>The Truth Is Out There...</h1>
-        
-        
-        
+      <div class="d-flex justify-content-center">
+        <h1 class="m-auto">The Truth Is Out There...</h1>
+
       </div>
       
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <!-- NAVLINKS -->
-      </div>
-    </div>
-    <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate">
-      
-    </div>
-  </nav>
-</header>
-<main id="app">
-  <div class="container-fluid">
-    <div class="row my-3 scrollme" id="posts">
-      <!-- <div class="card postCard elevation-3 mx-4 my-2" style="width: 17.5rem">
-        <div class="d-flex justify-content-center">
-          <img
-          src="https://d2ph5fj80uercy.cloudfront.net/04/cat3676.jpg"
-          alt=""
-          class="img-fluid rounded mt-2 elevation-4 polaroid"
-          />
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <!-- NAVLINKS -->
         </div>
-        <div class="card-body">
-          <div class="border-bottom border-dark border-3">
-            <span> <i class="mdi mdi-comment fs-2 selectable"  data-bs-toggle="modal"
+      </div>
+      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+    </nav>
+  </header>
+  <main id="app">
+    <div class="container-fluid">
+      <div class="row mt-2 scrollme justify-content-center" id="posts">
+        <!-- <div class="card postCard elevation-3 mx-4 my-2" style="width: 17.5rem">
+              <div class="d-flex justify-content-center">
+                <img
+                  src="https://d2ph5fj80uercy.cloudfront.net/04/cat3676.jpg"
+                  alt=""
+                  class="img-fluid rounded mt-2 elevation-4 polaroid"
+                />
+              </div>
+              <div class="card-body">
+                <div class="border-bottom border-dark border-3">
+                  <span> <i class="mdi mdi-comment fs-2 selectable"  data-bs-toggle="modal"
               data-bs-target="#postModal"></i></span>
               <span class="mx-3">
                 <i class="mdi mdi-arrow-up-box fs-2 selectable"></i>14</span
@@ -68,40 +64,29 @@
                 <span>
                   <i class="mdi mdi-arrow-down-box fs-2 selectable"></i
                     >5</span
-                    >
-                  </div>
-                  <div class="d-flex justify-content-end text-shadow mt-2">
-                    <h6>PlaceHolder Text</h6>
-                  </div>
+                  >
                 </div>
-              </div> -->
-              
-            </div>
-            <!-- ------NEW ROW------ -->
-            <div class="row mt-5 d-flex">
-              <div class="col-md-2">
-                <i class="mdi mdi-sort-ascending fs-1 selectable text-light sticky-up" title="Sort by most popular" onclick="app.cryptidsController.sortUp()"></i>
+                <div class="d-flex justify-content-end text-shadow mt-2">
+                  <h6>PlaceHolder Text</h6>
+                </div>
               </div>
-              <div class="col-md-2">
-                <i class="mdi mdi-sort-descending fs-1 selectable text-light sticky-down" title ="Sort by least popular" onclick="app.cryptidsController.sortDown()"></i>
-              </div>
-              <div class="col-md-2">
-                <button type="button" class="btn bg-primary text-light rounded-circle sticky-btn" data-bs-toggle="modal"
-                data-bs-target="#postFormModal">
-                <i class="mdi mdi-foot-print fs-1"></i>
-              </button>
+            </div> -->
+
+      </div>
+      <!-- ------NEW ROW------ -->
+      <div class="row mt-5">
+        <div class="col-md-2">
+
+          <button type="button" class="btn bg-danger text-light rounded-circle sticky-btn" data-bs-toggle="modal"
+            data-bs-target="#postFormModal">
+            <i class="mdi mdi-foot-print fs-1"></i>
+          </button>
 
 
-              
-              
-                
-                
-              
-              
-              <!-- --- -->
-            </div>
-          </div>
+          <!-- --- -->
         </div>
+      </div>
+    </div>
     </div>
 
   </main>
@@ -114,16 +99,17 @@
   </footer>
 
   <!-- ---------------------- -->
+  
   <!-- ------------------------------------------------ -->
 
   <!-- Modal -->
   <div class="modal fade modal-dar" id="postModal" tabindex="-1" aria-labelledby="postModal" aria-hidden="true">
     <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable modal-xl">
-      <div class="modal-content">
-        <div class="modal-body p-2">
+      <div class="modal-content commentbg ">
+        <div class="modal-body px-4 py-2 " style="overflow-y: auto;">
           <div class="" id="activecryptid">
 
-            <h1>TEST COMMENTS</h1>
+
             <!-- SECTION comment modal will populate here -->
 
             <!-- <div class="row">
@@ -191,7 +177,7 @@
           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" id="formModal">
           <form onsubmit="app.cryptidsController.addCryptid()">
             <div class="form-floating mb-3">
               <input type="url" class="form-control" id="imgUrl" name="imgUrl" placeholder="ImgUrl">

@@ -1,15 +1,16 @@
-import { ActiveCryptidsController } from "./Controllers/ActiveCryptidsController.js";
+import { ActiveCryptidsController } from './Controllers/ActiveCryptidsController.js';
 import { AuthController } from './Controllers/AuthController.js';
-import { CryptidsController } from "./Controllers/CryptidsController.js";
-
+import { CommentsController } from './Controllers/CommentsController.js';
+import { CryptidsController } from './Controllers/CryptidsController.js';
 
 class App {
   authController = new AuthController();
 
-  cryptidsController = new CryptidsController()
+  cryptidsController = new CryptidsController();
 
-  activeCryptidsController = new ActiveCryptidsController()
+  activeCryptidsController = new ActiveCryptidsController();
+  commentsController = new CommentsController();
 }
 
 // @ts-ignore
-window.app = new App()
+window.app = new App();
