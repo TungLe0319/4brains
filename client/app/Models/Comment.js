@@ -25,7 +25,7 @@ export class Comment {
                       ${this.agentName}</h5>
                         <small>${this.body}</small>
                       </div>
-                      <i class = "mdi mdi-delete" onclick="app.commentsController.removeComment('${this.id}')">
+                      <i class = "mdi mdi-delete selectable fs-2" onclick="app.commentsController.removeComment('${this.id}')">
 
                       </i>
                     </div>

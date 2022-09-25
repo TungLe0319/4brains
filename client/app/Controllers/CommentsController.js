@@ -32,7 +32,7 @@ export class CommentsController {
   }
   async removeComment(id) {
     try {
-      if (await Pop.confirm())
+     
         await commentsService.removeComment(id)
     } catch (error) {
       console.error('[remove comment]', error);

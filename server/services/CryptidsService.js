@@ -29,7 +29,7 @@ class CryptidsService {
     if (cryptid.agentId != userInfo.id) {
       throw new Forbidden('Access Denied')
     }
-    await cryptid.delete()
+    await cryptid.remove()
     return cryptid
 
   }
