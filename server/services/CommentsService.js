@@ -1,36 +1,35 @@
 import { dbContext } from '../db/DbContext.js';
-import { BadRequest, Forbidden } from "../utils/Errors.js";
+import { BadRequest, Forbidden } from '../utils/Errors.js';
 
 class CommentsService {
   async removeComment(cryptidId, userInfo, agentId) {
-    
-    console.log(cryptidId, userInfo, 'remove coment',agentId);
+    console.log(cryptidId, userInfo, 'remove coment', agentId);
 
-    const comment = await this.getCommentById(cryptidId)
-   
+    const comment = await this.getCommentById(cryptidId);
+
     // if (comment.agentId != userInfo.id) {
     //   throw new Forbidden('not yo comment, not yo problem')
     // }
-    await comment.remove()
-    return comment
+    await comment.remove();
+    return comment;
   }
 
+  async getComments(cryptidId) {
+    const allComments = await dbContext.Comments.find({ cryptidId });
 
-
-  async getComments() {
-    const allComments = await dbContext.Comments.find()
-  
     // console.log(allComments);
     return allComments;
   }
   async getCommentById(commentId) {
-    const comments = await dbContext.Comments.findById(commentId).populate('agent', 'name picture')
-    if(!comments){
-      throw new BadRequest('Invalid Id')
-    };
+    const comments = await dbContext.Comments.findById(commentId).populate(
+      'agent',
+      'name picture'
+    );
+    if (!comments) {
+      throw new BadRequest('Invalid Id');
+    }
     // console.log(comments);
     return comments;
-  
   }
   async postComment(formData, cryptidId, userInfo) {
     formData.cryptidId = cryptidId;
