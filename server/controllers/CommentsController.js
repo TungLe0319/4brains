@@ -7,31 +7,32 @@ export class CommentsController extends BaseController {
     super('api/comments');
     this.router
       .get('/:cryptidId', this.getComments)
-      .get('/:commentId', this.getCommentById)
+      // .get('/:commentId', this.getCommentById)
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('/:cryptidId', this.postComment)
-      .delete('/:cryptidId', this.removeComment);
+      // .delete('/:cryptidId', this.removeComment);
   }
 
   async getComments(req, res, next) {
     try {
-      const comments = await commentsService.getComments(req.params.cryptidId);
+      const comments = await commentsService.getComments()
+      
       res.send(comments);
     } catch (error) {
       next(error);
     }
   }
 
-  async getCommentById(req, res, next) {
-    try {
-      const comment = await (
-        await commentsService.getCommentById(req.params.commentId)
-      ).populate('agent', 'name picture');
-      res.send(comment);
-    } catch (error) {
-      next(error);
-    }
-  }
+  // async getCommentById(req, res, next) {
+  //   try {
+  //     const comment = await (
+  //       await commentsService.getCommentById(req.params.commentId)
+  //     ).populate('agent', 'name picture');
+  //     res.send(comment);
+  //   } catch (error) {
+  //     next(error);
+  //   }
+  // }
 
   async postComment(req, res, next) {
     try {
@@ -50,17 +51,17 @@ export class CommentsController extends BaseController {
     }
   }
 
-  async removeComment(req, res, next) {
-    try {
-      const comment = await commentsService.removeComment(
-        req.params.cryptidId,
+  // async removeComment(req, res, next) {
+  //   try {
+  //     const comment = await commentsService.removeComment(
+  //       req.params.cryptidId,
 
-        req.userInfo.id,
-        req.agentId
-      );
-      res.send(comment, 'Comment Removed');
-    } catch (error) {
-      next(error);
-    }
-  }
+  //       req.userInfo.id,
+  //       req.agentId
+  //     );
+  //     res.send(comment, 'Comment Removed');
+  //   } catch (error) {
+  //     next(error);
+  //   }
+  // }
 }
