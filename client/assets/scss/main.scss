@@ -63,6 +63,20 @@ main {
   right: 15px;
 }
 
+.sticky-down {
+  position: fixed;
+  bottom: 115px;
+  right: 33px;
+
+}
+
+.sticky-up {
+  position: fixed;
+  right: 33px;
+  bottom: 166px;
+
+}
+
 .rotated {
   transform: rotate(3deg);
 
