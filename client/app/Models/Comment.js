@@ -8,6 +8,7 @@ export class Comment {
     this.agentName = data.agent.name
     this.agentPicture = data.agent.picture
     this.date = data.createdAt.substring(0, 10)
+    this.agentId= data.agentId
   }
 
   get CommentTemplate() {

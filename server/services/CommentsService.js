@@ -2,13 +2,15 @@ import { dbContext } from '../db/DbContext.js';
 import { BadRequest, Forbidden } from "../utils/Errors.js";
 
 class CommentsService {
-  async removeComment(cryptidId, userInfo) {
-    console.log(cryptidId, userInfo, 'remove coment');
+  async removeComment(cryptidId, userInfo, agentId) {
+    
+    console.log(cryptidId, userInfo, 'remove coment',agentId);
 
     const comment = await this.getCommentById(cryptidId)
-    if (comment.agentId != userInfo.id) {
-      throw new Forbidden('not yo comment, not yo problem')
-    }
+   
+    // if (comment.agentId != userInfo.id) {
+    //   throw new Forbidden('not yo comment, not yo problem')
+    // }
     await comment.remove()
     return comment
   }
@@ -16,7 +18,8 @@ class CommentsService {
 
 
   async getComments() {
-    const allComments = await dbContext.Comments.find().populate('agent', 'name picture');
+    const allComments = await dbContext.Comments.find()
+  
     // console.log(allComments);
     return allComments;
   }

@@ -101,3 +101,12 @@ main {
   overflow: auto;
 
 }
+
+@media screen and (max-width: 800px){
+  html{
+  overflow-x:auto !important;
+  }
+  body{
+  overflow-x:auto !important;
+  }
+}
