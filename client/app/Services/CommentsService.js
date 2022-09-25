@@ -7,7 +7,7 @@ class CommentsService {
     await server.delete(`api/comments/${id}`)
    let  leftovers  = appState.comments.filter((c) => c.id != id)
  appState.comments = leftovers
-    appState.emit('comments')
+    appState.emit('activeCryptids')
   }
 
 
@@ -21,9 +21,7 @@ class CommentsService {
     appState.emit('activeCryptids')
   }
 
-  async deleteComment() {
-
-  }
+ 
 }
 
 export const commentsService = new CommentsService();
