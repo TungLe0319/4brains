@@ -13798,6 +13798,12 @@ main {
   right: 15px;
 }
 
+.sticky-btn:hover {
+  transform: scale(1.04);
+  transition: all 0.3s ease-out;
+  color: red;
+}
+
 .sticky-down {
   position: fixed;
   bottom: 115px;

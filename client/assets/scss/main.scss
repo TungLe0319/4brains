@@ -19,8 +19,6 @@ body {
   background-position: center;
 }
 
-
-
 main {
   flex-grow: 1;
 }
@@ -77,13 +75,17 @@ main {
   bottom: 30px;
   right: 15px;
 }
+.sticky-btn:hover {
+  transform: scale(1.04);
+  transition: all 0.3s ease-out;
+  color: red;
+}
 
 .sticky-down {
   position: fixed;
   bottom: 115px;
   right: 31px;
   color: #890012;
-
 }
 
 .sticky-up {
@@ -91,12 +93,10 @@ main {
   right: 31px;
   bottom: 166px;
   color: #890012;
-
 }
 
 .rotated {
   transform: rotate(3deg);
-
 }
 
 .commentbg {
@@ -109,13 +109,11 @@ main {
 .scrollme {
   max-height: 85vh;
   overflow: auto;
-
 }
 
 .description {
   max-height: 20vh;
   overflow: auto;
-
 }
 
 @media screen and (max-width: 800px) {
